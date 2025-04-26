@@ -9,3 +9,9 @@ Ans:- MVC = Model View Controller.
 
 Q4:- What is MVC Architecture ?
 Ans: TODO
+
+Q4:- What is full Form of pom.xml ?
+Ans:- POM = Project Object Model.
+
+Q5:- How many dependency in you pom.xml file and there version ?
+Ans:- TODO
