@@ -143,7 +143,7 @@ public class TestUserModel {
 
 		UserModel model = new UserModel();
 
-		List list = model.search(bean, 1, 0);
+		List list = model.search(bean, 1, 10);
 
 		Iterator it = list.iterator();
 

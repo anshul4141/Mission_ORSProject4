@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.co.rays.proj4.Exception.DuplicateRecordException;
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.util.JDBCDataSource;
 
@@ -35,6 +36,12 @@ public class RoleModel {
 	public void add(RoleBean bean) throws Exception {
 
 		Connection conn = null;
+
+		RoleBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("role aready exist");
+		}
 
 		try {
 			int pk = nextPk();
@@ -94,7 +101,7 @@ public class RoleModel {
 
 			JDBCDataSource.closeConnection(conn);
 
-			System.out.println("data updated => " + i);
+			System.out.println("data Updated => " + i);
 		} catch (Exception e) {
 			JDBCDataSource.trnRollback(conn);
 		}
@@ -175,12 +182,8 @@ public class RoleModel {
 		JDBCDataSource.closeConnection(conn);
 		return bean;
 	}
-	
-	public List list() throws Exception {
-		return search(null, 0, 0);
-	}
-	
-	public List search(RoleBean bean, int pageNo, int pageSize) throws Exception {
+
+	public List search(RoleBean bean) throws Exception {
 
 		Connection conn = JDBCDataSource.getConnection();
 
@@ -188,13 +191,12 @@ public class RoleModel {
 
 		if (bean != null) {
 			if (bean.getName() != null && bean.getName().length() > 0) {
-				sql.append(" and first_name like '" + bean.getName() + "%'");
+				sql.append(" and name like '" + bean.getName() + "%'");
 			}
-		}
 
-		if (pageSize > 0) {
-			pageNo = (pageNo - 1) * pageSize;
-			sql.append(" limit " + pageNo + ", " + pageSize);
+			if (bean.getModifiedBy() != null && bean.getModifiedBy().length() > 0) {
+				sql.append(" and modified_by like '" + bean.getModifiedBy() + "%'");
+			}
 		}
 
 		System.out.println("sql ==>> " + sql.toString());
@@ -219,5 +221,4 @@ public class RoleModel {
 		JDBCDataSource.closeConnection(conn);
 		return list;
 	}
-
 }

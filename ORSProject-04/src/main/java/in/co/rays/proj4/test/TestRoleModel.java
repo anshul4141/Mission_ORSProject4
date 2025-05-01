@@ -7,6 +7,7 @@ import java.util.List;
 
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.model.RoleModel;
+import in.co.rays.proj4.model.UserModel;
 
 public class TestRoleModel {
 
@@ -14,8 +15,8 @@ public class TestRoleModel {
 
 //		testNextPk();
 //		testAdd();
-//		testDelete();
 //		testUpdate();
+//		testDelete();
 //		testFindByPk();
 //		testFindByName();
 		testSearch();
@@ -35,10 +36,10 @@ public class TestRoleModel {
 	public static void testAdd() throws Exception {
 
 		RoleBean bean = new RoleBean();
-		bean.setName("kiosk");
-		bean.setDescription("kiosk");
-		bean.setCreatedBy("admin@gmail.com");
-		bean.setModifiedBy("admin@gmail.com");
+		bean.setName("student");
+		bean.setDescription("student");
+		bean.setCreatedBy("root");
+		bean.setModifiedBy("root");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
@@ -48,85 +49,88 @@ public class TestRoleModel {
 
 	}
 
-	public static void testUpdate() throws Exception {
+	private static void testUpdate() throws Exception {
 
 		RoleBean bean = new RoleBean();
-		bean.setId(2);
-		bean.setName("student");
-		bean.setDescription("student");
-		bean.setCreatedBy("admin@gmail.com");
-		bean.setModifiedBy("admin@gmail.com");
+		bean.setId(1l);
+		bean.setName("admin");
+		bean.setDescription("admin has full access of application");
+		bean.setCreatedBy("root");
+		bean.setModifiedBy("root");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
 
 		RoleModel model = new RoleModel();
 
 		model.update(bean);
+
 	}
 
-	public static void testDelete() throws Exception {
-		RoleModel model = new RoleModel();
-		model.delete(1);
-	}
-
-	public static void testFindByPk() throws Exception {
+	private static void testDelete() throws Exception {
 
 		RoleModel model = new RoleModel();
 
-		RoleBean bean = model.findByPk(1);
+		model.delete(5l);
 
-		if (bean != null) {
-			System.out.print(bean.getId());
-			System.out.print("\t" + bean.getName());
-			System.out.print("\t" + bean.getDescription());
-			System.out.print("\t" + bean.getCreatedBy());
-			System.out.print("\t" + bean.getModifiedBy());
-			System.out.print("\t" + bean.getCreatedDatetime());
-			System.out.println("\t" + bean.getModifiedDatetime());
-		} else {
-			System.out.println("id not found");
-		}
 	}
 
-	public static void testFindByName() throws Exception {
-
-		RoleModel model = new RoleModel();
-
-		RoleBean bean = model.findByName("admin");
-
-		if (bean != null) {
-			System.out.print(bean.getId());
-			System.out.print("\t" + bean.getName());
-			System.out.print("\t" + bean.getDescription());
-			System.out.print("\t" + bean.getCreatedBy());
-			System.out.print("\t" + bean.getModifiedBy());
-			System.out.print("\t" + bean.getCreatedDatetime());
-			System.out.println("\t" + bean.getModifiedDatetime());
-		} else {
-			System.out.println("name not found");
-		}
-	}
-
-	public static void testSearch() throws Exception {
+	private static void testFindByPk() throws Exception {
 
 		RoleBean bean = new RoleBean();
-
 		RoleModel model = new RoleModel();
 
-		List list = model.search(bean, 1, 10);
+		bean = model.findByPk(3l);
+
+		if (bean != null) {
+
+			System.out.print(bean.getName());
+			System.out.println("\t" + bean.getDescription());
+
+		}
+
+	}
+
+	private static void testFindByName() throws Exception {
+
+		RoleBean bean = new RoleBean();
+		RoleModel model = new RoleModel();
+
+		bean = model.findByName("student");
+
+		if (bean != null) {
+
+			System.out.print(bean.getName());
+			System.out.println("\t" + bean.getDescription());
+
+		}
+
+	}
+
+	private static void testSearch() throws Exception {
+
+		RoleModel model = new RoleModel();
+		RoleBean bean = new RoleBean();
+		
+		//bean.setName("student");
+		bean.setModifiedBy("root");
+
+		List list = model.search(bean);
 
 		Iterator it = list.iterator();
 
 		while (it.hasNext()) {
+
 			bean = (RoleBean) it.next();
 			System.out.print(bean.getId());
 			System.out.print("\t" + bean.getName());
 			System.out.print("\t" + bean.getDescription());
-			System.out.print("\t" + bean.getCreatedBy());
 			System.out.print("\t" + bean.getModifiedBy());
+			System.out.print("\t" + bean.getCreatedBy());
 			System.out.print("\t" + bean.getCreatedDatetime());
-			System.out.println("\t" + bean.getModifiedDatetime());
+			System.out.println(bean.getModifiedDatetime());
+
 		}
+
 	}
 
 }
