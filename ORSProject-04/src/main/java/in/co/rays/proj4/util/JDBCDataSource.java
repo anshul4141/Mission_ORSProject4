@@ -11,7 +11,7 @@ import in.co.rays.proj4.Exception.ApplicationException;
 /**
  * JDBC DataSource is a Data Connection Pool.
  * 
- * @author Anshul Prajapati
+ * @author Anish Malviya
  *
  */
 public final class JDBCDataSource {
@@ -35,7 +35,7 @@ public final class JDBCDataSource {
 	public static JDBCDataSource getInstance() {
 		if (datasource == null) {
 
-			ResourceBundle rb = ResourceBundle.getBundle("in.co.rays.proj4.bundle.system");
+			ResourceBundle rb = ResourceBundle.getBundle("com.rays.proj4.resourcesB.System");
 
 			datasource = new JDBCDataSource();
 			datasource.cpds = new ComboPooledDataSource();
@@ -50,7 +50,7 @@ public final class JDBCDataSource {
 			datasource.cpds.setInitialPoolSize(new Integer((String) rb.getString("initialPoolSize")));
 			datasource.cpds.setAcquireIncrement(new Integer((String) rb.getString("acquireIncrement")));
 			datasource.cpds.setMaxPoolSize(new Integer((String) rb.getString("maxPoolSize")));
-			datasource.cpds.setMaxIdleTime(new Integer((String) rb.getString("timeout")));
+			datasource.cpds.setMaxIdleTime(DataUtility.getInt(rb.getString("timeout")));
 			datasource.cpds.setMinPoolSize(new Integer((String) rb.getString("minPoolSize")));
 
 		}
@@ -81,7 +81,7 @@ public final class JDBCDataSource {
 		}
 	}
 
-	public static void trnRollback(Connection connection) throws Exception {
+	public static void trnRollback(Connection connection) throws ApplicationException {
 		if (connection != null) {
 			try {
 				connection.rollback();
