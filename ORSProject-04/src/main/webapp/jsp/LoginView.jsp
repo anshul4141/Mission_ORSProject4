@@ -11,6 +11,28 @@
 
 	<h1 align="center">Login</h1>
 
+	<form action="<%=ORSView.LOGIN_CTL%>" method="post">
+		<center>
+			<table>
+				<tr>
+					<th>Login</th>
+					<td><input type="email" name="login" value=""
+						placeholder="enter your email"></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="password" name="password" value=""
+						placeholder="enter your password"></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><input type="submit" name="operation"
+						value="<%=LoginCtl.OP_SIGN_IN%>"></td>
+				</tr>
+			</table>
+		</center>
+	</form>
+
 	<%@ include file="Footer.jsp"%>
 </body>
 </html>

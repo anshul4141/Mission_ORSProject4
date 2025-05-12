@@ -7,10 +7,38 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import in.co.rays.proj4.util.DataValidator;
 import in.co.rays.proj4.util.ServletUtility;
 
 @WebServlet(name = "LoginCtl", urlPatterns = { "/LoginCtl" })
 public class LoginCtl extends BaseCtl {
+
+	public static final String OP_SIGN_IN = "SignIn";
+
+	@Override
+	protected boolean validate(HttpServletRequest request) {
+
+		boolean isValid = true;
+
+		if (DataValidator.isNull(request.getParameter("login"))) {
+			System.out.println("login is required");
+			return isValid = false;
+		}
+//		} else if (!DataValidator.isEmail(request.getParameter("login"))) {
+//			System.out.println("invalid login id");
+//			return isValid = false;
+//		}
+
+		if (DataValidator.isNull(request.getParameter("password"))) {
+			System.out.println("password is required");
+			return isValid = false;
+		} else if (!DataValidator.isPassword(request.getParameter("password"))) {
+			System.out.println("password is in wrong pattern");
+			return isValid = false;
+		}
+
+		return isValid;
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -21,7 +49,7 @@ public class LoginCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		System.out.println("loginCtl post method");
 	}
 
 	@Override

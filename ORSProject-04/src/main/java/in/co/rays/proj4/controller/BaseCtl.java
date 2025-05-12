@@ -125,24 +125,13 @@ public abstract class BaseCtl extends HttpServlet {
 			throws ServletException, IOException {
 		System.out.println("Bctl service");
 
-		// Load the preloaded data required to display at HTML form
 		preload(request);
 
 		String op = DataUtility.getString(request.getParameter("operation"));
-		System.out.println("Bctl servi op" + op);
-		// Check if operation is not DELETE, VIEW, CANCEL, RESET and NULL then
-		// perform input data validation
-
 		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
 				&& !OP_DELETE.equalsIgnoreCase(op) && !OP_RESET.equalsIgnoreCase(op)) {
-			System.out.println("Bctl 5 operation");
-			// Check validation, If fail then send back to page with error
-			// messages
-
 			if (!validate(request)) {
-				System.out.println("Bctl validate ");
 				BaseBean bean = (BaseBean) populateBean(request);
-				// call setBean method for show inserted data
 				ServletUtility.setBean(bean, request);
 				ServletUtility.forward(getView(), request, response);
 				return;
