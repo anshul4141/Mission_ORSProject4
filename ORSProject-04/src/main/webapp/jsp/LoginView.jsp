@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -17,12 +18,14 @@
 				<tr>
 					<th>Login</th>
 					<td><input type="email" name="login" value=""
-						placeholder="enter your email"></td>
+						placeholder="enter your email"> <font color="red"><%=ServletUtility.getErrorMessage("login", request)%></font>
+					</td>
 				</tr>
 				<tr>
 					<th>Password</th>
 					<td><input type="password" name="password" value=""
-						placeholder="enter your password"></td>
+						placeholder="enter your password"> <font color="red"><%=ServletUtility.getErrorMessage("password", request)%></font>
+					</td>
 				</tr>
 				<tr>
 					<th></th>

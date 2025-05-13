@@ -101,6 +101,7 @@ public class DataValidator {
 
 		if (isNotNull(val)) {
 			try {
+				System.out.println(val.matches(passreg));
 				return val.matches(passreg);
 			} catch (NumberFormatException e) {
 				return false;

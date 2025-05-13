@@ -22,19 +22,14 @@ public class LoginCtl extends BaseCtl {
 
 		if (DataValidator.isNull(request.getParameter("login"))) {
 			System.out.println("login is required");
-			return isValid = false;
+			request.setAttribute("login", "login is required");
+			isValid = false;
 		}
-//		} else if (!DataValidator.isEmail(request.getParameter("login"))) {
-//			System.out.println("invalid login id");
-//			return isValid = false;
-//		}
-
+		System.out.println("password: " + request.getParameter("password"));
 		if (DataValidator.isNull(request.getParameter("password"))) {
 			System.out.println("password is required");
-			return isValid = false;
-		} else if (!DataValidator.isPassword(request.getParameter("password"))) {
-			System.out.println("password is in wrong pattern");
-			return isValid = false;
+			request.setAttribute("password", "password is required");
+			isValid = false;
 		}
 
 		return isValid;
