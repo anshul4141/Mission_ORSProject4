@@ -131,6 +131,7 @@ public abstract class BaseCtl extends HttpServlet {
 		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
 				&& !OP_DELETE.equalsIgnoreCase(op) && !OP_RESET.equalsIgnoreCase(op)) {
 			if (!validate(request)) {
+				System.out.println("data validate nhi hai");
 				BaseBean bean = (BaseBean) populateBean(request);
 				ServletUtility.setBean(bean, request);
 				ServletUtility.forward(getView(), request, response);
@@ -138,6 +139,7 @@ public abstract class BaseCtl extends HttpServlet {
 			}
 		}
 		super.service(request, response);
+		System.out.println("method: " + request.getMethod());
 	}
 
 	/**

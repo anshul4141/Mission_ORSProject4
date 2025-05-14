@@ -18,6 +18,9 @@
 	<%@ include file="Header.jsp"%>
 	<form action="<%=ORSView.USER_REGISTRATION_CTL%>" method="post">
 		<center>
+		
+		<span style="color: green"><%=ServletUtility.getSuccessMessage(request) %></span>
+		
 			<table>
 				<tr>
 					<th>First Name<span style="color: red">*</span> :
@@ -72,6 +75,8 @@
 
 							String htmlList = HTMLUtility.getList("gender", bean.getGender(), map);
 						%> <%=htmlList%>
+						<font
+						color="red"><%=ServletUtility.getErrorMessage("gender", request)%></font>
 					</td>
 				</tr>
 
@@ -84,7 +89,9 @@
 					<th>Date Of Birth <span style="color: red">*</span> :
 					</th>
 					<td><input type="date" name="dob" size="26"
-						placeholder="Enter Dob " value=""></td>
+						placeholder="Enter Dob " value="">
+						<font
+						color="red"><%=ServletUtility.getErrorMessage("dob", request)%></font></td>
 				</tr>
 
 				<tr>
@@ -96,7 +103,8 @@
 					<th>Mobile No <span style="color: red">*</span> :
 					</th>
 					<td><input type="text" name="mobileNo"
-						placeholder="Enter Mobile No" size="26" maxlength="10" value=""></td>
+						placeholder="Enter Mobile No" size="26" maxlength="10" value=""><font
+						color="red"><%=ServletUtility.getErrorMessage("mobileNo", request)%></font></td>
 				</tr>
 
 				<tr>
@@ -108,7 +116,8 @@
 					<th>Password <span style="color: red">*</span> :
 					</th>
 					<td><input type="password" name="password"
-						placeholder="Enter Password" size="26" value=""></td>
+						placeholder="Enter Password" size="26" value=""><font
+						color="red"><%=ServletUtility.getErrorMessage("password", request)%></font></td>
 				</tr>
 
 				<tr>
@@ -120,7 +129,8 @@
 					<th>Confirm Password <span style="color: red">*</span> :
 					</th>
 					<td><input type="password" name="confirmPassword"
-						placeholder="Re-Enter password" size="26" value=""></td>
+						placeholder="Re-Enter password" size="26" value=""><font
+						color="red"><%=ServletUtility.getErrorMessage("confirmPassword", request)%></font></td>
 				</tr>
 
 				<tr>
