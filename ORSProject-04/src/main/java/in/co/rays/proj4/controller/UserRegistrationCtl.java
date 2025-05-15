@@ -84,8 +84,6 @@ public class UserRegistrationCtl extends BaseCtl {
 		bean.setRoleId(RoleBean.STUDENT);
 
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
-//		System.out.println(request.getParameter("firstName"));
-//		System.out.println(DataUtility.getString(request.getParameter("firstName")));
 		bean.setFirstName(DataUtility.getString(request.getParameter("firstName")));
 		bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
@@ -94,7 +92,6 @@ public class UserRegistrationCtl extends BaseCtl {
 		bean.setGender(DataUtility.getString(request.getParameter("gender")));
 		bean.setDob(DataUtility.getDate(request.getParameter("dob")));
 		bean.setMobileNo(DataUtility.getString(request.getParameter("mobileNo")));
-//System.out.println("-------------------"+request.getParameter("dob"));
 
 		populateDTO(bean, request);
 		return bean;

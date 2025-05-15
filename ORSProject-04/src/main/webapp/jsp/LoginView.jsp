@@ -14,6 +14,11 @@
 
 	<form action="<%=ORSView.LOGIN_CTL%>" method="post">
 		<center>
+
+			<span style="color: red"><%=ServletUtility.getErrorMessage(request)%></span>
+			<span style="color: green"><%=ServletUtility.getSuccessMessage(request)%></span>
+
+
 			<table>
 				<tr>
 					<th>Login</th>
@@ -30,7 +35,8 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=LoginCtl.OP_SIGN_IN%>"></td>
+						value="<%=LoginCtl.OP_SIGN_IN%>"><input type="submit"
+						name="operation" value="<%=LoginCtl.OP_SIGN_UP%>"></td>
 				</tr>
 			</table>
 		</center>
