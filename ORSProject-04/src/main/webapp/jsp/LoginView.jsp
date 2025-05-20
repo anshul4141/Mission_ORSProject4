@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.util.DataUtility"%>
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -8,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<jsp:useBean id="bean" class="in.co.rays.proj4.bean.UserBean"
+		scope="request"></jsp:useBean>
 	<%@ include file="Header.jsp"%>
 
 	<h1 align="center">Login</h1>
@@ -22,7 +26,8 @@
 			<table>
 				<tr>
 					<th>Login</th>
-					<td><input type="email" name="login" value=""
+					<td><input type="email" name="login"
+						value="<%=DataUtility.getStringData(bean.getLogin())%>"
 						placeholder="enter your email"> <font color="red"><%=ServletUtility.getErrorMessage("login", request)%></font>
 					</td>
 				</tr>

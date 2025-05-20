@@ -94,6 +94,7 @@ public class LoginCtl extends BaseCtl {
 					session.setAttribute("user", bean);
 					roleBean = roleModel.findByPk(bean.getRoleId());
 					session.setAttribute("role", roleBean.getName());
+					ServletUtility.setBean(bean, request);
 					ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
 				} else {
 					ServletUtility.setErrorMessage("invalid login or password", request);
