@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.co.rays.proj4.Exception.ApplicationException;
 import in.co.rays.proj4.Exception.DuplicateRecordException;
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.util.JDBCDataSource;
@@ -183,42 +184,56 @@ public class RoleModel {
 		return bean;
 	}
 
-	public List search(RoleBean bean) throws Exception {
+	public List list() throws ApplicationException {
+		return search(null, 0, 0);
+	}
 
-		Connection conn = JDBCDataSource.getConnection();
-
-		StringBuffer sql = new StringBuffer("select * from st_role where 1=1");
+	public List search(RoleBean bean, int pageNo, int pageSize) throws ApplicationException {
+		StringBuffer sql = new StringBuffer("SELECT * FROM ST_ROLE WHERE 1=1");
 
 		if (bean != null) {
+			if (bean.getId() > 0) {
+				sql.append(" AND id= " + bean.getId());
+			}
 			if (bean.getName() != null && bean.getName().length() > 0) {
-				sql.append(" and name like '" + bean.getName() + "%'");
+				sql.append(" AND NAME like '" + bean.getName() + "%'");
+			}
+			if (bean.getDescription() != null && bean.getDescription().length() > 0) {
+				sql.append(" AND DESCRIPTION like '" + bean.getDescription() + "%'");
 			}
 
-			if (bean.getModifiedBy() != null && bean.getModifiedBy().length() > 0) {
-				sql.append(" and modified_by like '" + bean.getModifiedBy() + "%'");
+		}
+
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			sql.append(" Limit " + pageNo + "," + pageSize);
+
+		}
+		ArrayList list = new ArrayList();
+		Connection conn = null;
+		try {
+			conn = JDBCDataSource.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bean = new RoleBean();
+				bean.setId(rs.getLong(1));
+				bean.setName(rs.getString(2));
+				bean.setDescription(rs.getString(3));
+				bean.setCreatedBy(rs.getString(4));
+				bean.setModifiedBy(rs.getString(5));
+				bean.setCreatedDatetime(rs.getTimestamp(6));
+				bean.setModifiedDatetime(rs.getTimestamp(7));
+				list.add(bean);
 			}
+			rs.close();
+		} catch (Exception e) {
+			// log.error("DatabaseException.....", e);
+			// throw new ApplicationException("Exception : Exception in search Role");
+		} finally {
+			JDBCDataSource.closeConnection(conn);
 		}
-
-		System.out.println("sql ==>> " + sql.toString());
-
-		PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-
-		ResultSet rs = pstmt.executeQuery();
-
-		List list = new ArrayList();
-
-		while (rs.next()) {
-			bean = new RoleBean();
-			bean.setId(rs.getLong(1));
-			bean.setName(rs.getString(2));
-			bean.setDescription(rs.getString(3));
-			bean.setCreatedBy(rs.getString(4));
-			bean.setModifiedBy(rs.getString(5));
-			bean.setCreatedDatetime(rs.getTimestamp(6));
-			bean.setModifiedDatetime(rs.getTimestamp(7));
-			list.add(bean);
-		}
-		JDBCDataSource.closeConnection(conn);
 		return list;
 	}
 }

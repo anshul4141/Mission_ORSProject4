@@ -30,13 +30,13 @@ public class RoleBean extends BaseBean {
 	@Override
 	public String getkey() {
 		// TODO Auto-generated method stub
-		return null;
+		return id + "";
 	}
 
 	@Override
 	public String getValue() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 }

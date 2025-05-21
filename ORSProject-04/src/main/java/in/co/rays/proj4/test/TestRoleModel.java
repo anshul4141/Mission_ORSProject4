@@ -19,7 +19,7 @@ public class TestRoleModel {
 //		testDelete();
 //		testFindByPk();
 //		testFindByName();
-		testSearch();
+//		testSearch();
 
 	}
 
@@ -106,31 +106,31 @@ public class TestRoleModel {
 
 	}
 
-	private static void testSearch() throws Exception {
-
-		RoleModel model = new RoleModel();
-		RoleBean bean = new RoleBean();
-		
-		//bean.setName("student");
-		bean.setModifiedBy("root");
-
-		List list = model.search(bean);
-
-		Iterator it = list.iterator();
-
-		while (it.hasNext()) {
-
-			bean = (RoleBean) it.next();
-			System.out.print(bean.getId());
-			System.out.print("\t" + bean.getName());
-			System.out.print("\t" + bean.getDescription());
-			System.out.print("\t" + bean.getModifiedBy());
-			System.out.print("\t" + bean.getCreatedBy());
-			System.out.print("\t" + bean.getCreatedDatetime());
-			System.out.println(bean.getModifiedDatetime());
-
-		}
-
-	}
+//	private static void testSearch() throws Exception {
+//
+//		RoleModel model = new RoleModel();
+//		RoleBean bean = new RoleBean();
+//		
+//		//bean.setName("student");
+//		bean.setModifiedBy("root");
+//
+//		List list = model.search(bean);
+//
+//		Iterator it = list.iterator();
+//
+//		while (it.hasNext()) {
+//
+//			bean = (RoleBean) it.next();
+//			System.out.print(bean.getId());
+//			System.out.print("\t" + bean.getName());
+//			System.out.print("\t" + bean.getDescription());
+//			System.out.print("\t" + bean.getModifiedBy());
+//			System.out.print("\t" + bean.getCreatedBy());
+//			System.out.print("\t" + bean.getCreatedDatetime());
+//			System.out.println(bean.getModifiedDatetime());
+//
+//		}
+//
+//	}
 
 }
