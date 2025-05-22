@@ -56,10 +56,10 @@ public class TestUserModel {
 		model.update(bean);
 	}
 
-	public static void testDelete() throws Exception {
-		UserModel model = new UserModel();
-		model.delete(1);
-	}
+//	public static void testDelete() throws Exception {
+//		UserModel model = new UserModel();
+//		model.delete(1);
+//	}
 
 	public static void testFindByPk() throws Exception {
 

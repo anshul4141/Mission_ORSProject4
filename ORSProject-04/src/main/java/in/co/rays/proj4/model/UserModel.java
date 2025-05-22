@@ -130,7 +130,7 @@ public class UserModel {
 		}
 	}
 
-	public void delete(long id) throws ApplicationException {
+	public void delete(UserBean bean) throws ApplicationException {
 
 		Connection conn = null;
 
@@ -141,7 +141,7 @@ public class UserModel {
 
 			PreparedStatement pstmt = conn.prepareStatement("delete from st_user where id = ?");
 
-			pstmt.setLong(1, id);
+			pstmt.setLong(1, bean.getId());
 
 			int i = pstmt.executeUpdate();
 
@@ -274,6 +274,10 @@ public class UserModel {
 			JDBCDataSource.closeConnection(conn);
 		}
 		return bean;
+	}
+
+	public List list() throws ApplicationException {
+		return search(null, 0, 0);
 	}
 
 	public List search(UserBean bean, int pageNo, int pageSize) throws ApplicationException {
