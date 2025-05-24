@@ -9,10 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.co.rays.proj4.Exception.ApplicationException;
+import in.co.rays.proj4.Exception.DuplicateRecordException;
 import in.co.rays.proj4.bean.BaseBean;
-import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
 import in.co.rays.proj4.model.RoleModel;
+import in.co.rays.proj4.model.UserModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
 import in.co.rays.proj4.util.ServletUtility;
@@ -112,6 +113,24 @@ public class UserCtl extends BaseCtl {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		UserModel model = new UserModel();
+
+		long id = DataUtility.getLong(request.getParameter("id"));
+
+		if (id != 0 && id > 0) {
+			System.out.println("in id > 0  condition");
+			UserBean bean;
+			try {
+				bean = model.findByPk(id);
+				System.out.println(bean);
+				ServletUtility.setBean(bean, request);
+			} catch (ApplicationException e) {
+				ServletUtility.handleException(e, request, response);
+				return;
+			}
+		}
+
 		ServletUtility.forward(getView(), request, response);
 
 	}
@@ -119,6 +138,47 @@ public class UserCtl extends BaseCtl {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String op = DataUtility.getString(request.getParameter("operation"));
+		long id = DataUtility.getLong(request.getParameter("id"));
+
+		UserModel model = new UserModel();
+		if (OP_SAVE.equalsIgnoreCase(op) || OP_UPDATE.equalsIgnoreCase(op)) {
+			UserBean bean = (UserBean) populateBean(request);
+			System.out.println(" U ctl DoPost 11111111");
+
+			try {
+				if (id > 0) {
+					model.update(bean);
+					ServletUtility.setBean(bean, request);
+					System.out.println(" U ctl DoPost 222222");
+					ServletUtility.setSuccessMessage("User is successfully Updated", request);
+
+				} else {
+					System.out.println(" U ctl DoPost 33333");
+					model.add(bean);
+					ServletUtility.setBean(bean, request);
+					ServletUtility.setSuccessMessage("User is successfully Added", request);
+				}
+
+			} catch (ApplicationException e) {
+				e.printStackTrace();
+				ServletUtility.handleException(e, request, response);
+				return;
+			} catch (DuplicateRecordException e) {
+				e.printStackTrace();
+				System.out.println(" U ctl D post 4444444");
+				ServletUtility.setBean(bean, request);
+				ServletUtility.setErrorMessage("Login id already exists", request);
+			}
+		} else if (OP_CANCEL.equalsIgnoreCase(op)) {
+			System.out.println(" U  ctl Do post 77777");
+
+			ServletUtility.redirect(ORSView.USER_CTL, request, response);
+			return;
+		}
+		ServletUtility.forward(getView(), request, response);
+
 	}
 
 	@Override

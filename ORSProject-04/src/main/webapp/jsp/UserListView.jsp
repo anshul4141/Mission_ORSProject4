@@ -88,8 +88,7 @@
 					</label> <%=HTMLUtility.getList("roleid", String.valueOf(bean.getRoleId()), rlist)%>
 
 						&nbsp; <label>dob</font> :
-					</label><input type="text" name="dob" id="udate" readonly="readonly"
-						size="25" placeholder="Enter Dob "
+					</label><input type="date" name="dob" size="25" placeholder="Enter Dob "
 						value="<%=ServletUtility.getParameter("dob", request)%>">
 
 						<input type="submit" name="operation"
@@ -103,9 +102,7 @@
 			<table border="1" width="100%" align="center" cellpadding=6px
 				cellspacing=".2">
 				<tr style="background: skyblue">
-					<th><input type="checkbox" id="select_all" name="select">Select
-						All</th>
-
+					<th>Select All</th>
 					<th>S.No.</th>
 					<th>FirstName</th>
 					<th>LastName</th>

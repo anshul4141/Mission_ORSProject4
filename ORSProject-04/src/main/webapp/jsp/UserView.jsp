@@ -36,7 +36,8 @@
 				}
 			%>
 			<span style="color: green"><%=ServletUtility.getSuccessMessage(request)%></span>
-
+			<input type="hidden" name="id"
+				value="<%=DataUtility.getStringData(String.valueOf(bean.getId()))%>">
 			<table>
 				<tr>
 					<th>First Name<span style="color: red">*</span> :
@@ -158,7 +159,8 @@
 					</th>
 					<td><input type="password" name="confirmPassword"
 						placeholder="Re-Enter password" size="26"
-						value="<%=DataUtility.getStringData(bean.getConfirmPassword())%>"><font
+						value="<%=bean != null && bean.getId() > 0 ? DataUtility.getStringData(bean.getPassword())
+					: bean.getConfirmPassword()%>"><font
 						color="red"><%=ServletUtility.getErrorMessage("confirmPassword", request)%></font></td>
 				</tr>
 
@@ -172,7 +174,7 @@
 					<th></th>
 					<td colspan="2">&nbsp; &emsp; <input type="submit"
 						name="operation"
-						value="<%=UserCtl.OP_SAVE%>">
+						value="<%=bean != null && bean.getId() > 0 ? UserCtl.OP_UPDATE : UserCtl.OP_SAVE%>">
 					</td>
 				</tr>
 			</table>

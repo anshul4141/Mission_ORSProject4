@@ -43,9 +43,9 @@ public class UserListCtl extends BaseCtl {
 
 		bean.setRoleId(DataUtility.getLong(request.getParameter("roleid")));
 		bean.setLogin(DataUtility.getString(request.getParameter("loginid")));
-
-		// bean.setMobileNo(DataUtility.getString(request.getParameter("mobile")));
+		System.out.println("dob: " + request.getParameter("dob"));
 		bean.setDob(DataUtility.getDate(request.getParameter("dob")));
+		System.out.println("dob in bean: " + bean.getDob());
 
 		return bean;
 	}

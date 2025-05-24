@@ -34,7 +34,7 @@ public class UserModel {
 		return pk + 1;
 	}
 
-	public void add(UserBean bean) throws DuplicateRecordException, ApplicationException {
+	public long add(UserBean bean) throws DuplicateRecordException, ApplicationException {
 
 		Connection conn = null;
 		int pk = 0;
@@ -83,6 +83,7 @@ public class UserModel {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+		return bean.getId();
 	}
 
 	public void update(UserBean bean) throws ApplicationException, DuplicateRecordException {
@@ -97,6 +98,7 @@ public class UserModel {
 
 		try {
 			conn = JDBCDataSource.getConnection();
+			conn.setAutoCommit(false);
 
 			PreparedStatement pstmt = conn.prepareStatement(
 					"update st_user set first_name = ?, last_name = ?, login = ?, password = ?, dob = ?, mobile_no = ?, role_id = ?, gender = ?, created_by = ?, modified_by = ?, created_datetime = ?, modified_datetime = ?  where id = ?");
@@ -119,9 +121,11 @@ public class UserModel {
 			conn.commit();
 			System.out.println("data updated => " + i);
 		} catch (Exception e) {
+			e.printStackTrace();
 			try {
 				conn.rollback();
 			} catch (Exception ex) {
+				ex.printStackTrace();
 				throw new ApplicationException("Exception : Delete rollback exception " + ex.getMessage());
 			}
 			throw new ApplicationException("Exception in updating User " + e);
