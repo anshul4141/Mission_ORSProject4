@@ -1,5 +1,5 @@
 package in.co.rays.proj4.bean;
 
-public class TimeableBean {
+public class TimeTableBean {
 
 }
