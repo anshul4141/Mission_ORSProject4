@@ -7,16 +7,50 @@ import java.util.Iterator;
 import java.util.List;
 
 import in.co.rays.proj4.bean.RoleBean;
+import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.model.RoleModel;
+import in.co.rays.proj4.model.UserModel;
 
 public class TestRoleModel {
 
-	public static void main(String[] args) throws SQLException {
-		// testNextPk();
-//		testAdd();
+	public static void main(String[] args) throws SQLException, DuplicateRecordException {
+//		testNextPk();
+		testAdd();
 //		testUpdate();
-		// testDelete();
-		testSearch();
+//		testDelete();
+//		testSearch();
+//		testFindByPk();
+//		testFindByName();
+	}
+
+	private static void testFindByName() {
+		RoleModel model = new RoleModel();
+		RoleBean bean = new RoleBean();
+
+		bean = model.findByName("faculty");
+		System.out.print(bean.getId());
+		System.out.print("\t" + bean.getName());
+		System.out.print("\t" + bean.getDescription());
+		System.out.print("\t" + bean.getCreatedBy());
+		System.out.print("\t" + bean.getModifiedBy());
+		System.out.print("\t" + bean.getCreatedDatetime());
+		System.out.println("\t" + bean.getModifiedDatetime());
+	}
+
+	private static void testFindByPk() {
+
+		RoleModel model = new RoleModel();
+		RoleBean bean = new RoleBean();
+
+		bean = model.findByPk(2);
+		System.out.print(bean.getId());
+		System.out.print("\t" + bean.getName());
+		System.out.print("\t" + bean.getDescription());
+		System.out.print("\t" + bean.getCreatedBy());
+		System.out.print("\t" + bean.getModifiedBy());
+		System.out.print("\t" + bean.getCreatedDatetime());
+		System.out.println("\t" + bean.getModifiedDatetime());
+
 	}
 
 	private static void testSearch() {
@@ -64,7 +98,7 @@ public class TestRoleModel {
 
 	}
 
-	private static void testAdd() throws SQLException {
+	private static void testAdd() throws SQLException, DuplicateRecordException {
 
 		RoleModel model = new RoleModel();
 
