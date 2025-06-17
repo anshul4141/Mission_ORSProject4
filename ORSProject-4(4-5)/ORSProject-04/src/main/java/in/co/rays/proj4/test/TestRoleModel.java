@@ -15,10 +15,10 @@ public class TestRoleModel {
 
 	public static void main(String[] args) throws SQLException, DuplicateRecordException {
 //		testNextPk();
-		testAdd();
+//		testAdd();
 //		testUpdate();
 //		testDelete();
-//		testSearch();
+		testSearch();
 //		testFindByPk();
 //		testFindByName();
 	}
@@ -57,8 +57,8 @@ public class TestRoleModel {
 
 		RoleModel model = new RoleModel();
 		RoleBean bean = new RoleBean();
-		bean.setName("admin");
-		List list = model.search(bean);
+		// bean.setName("admin");
+		List list = model.search(bean, 3, 2);
 
 		Iterator it = list.iterator();
 		while (it.hasNext()) {

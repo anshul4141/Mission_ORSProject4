@@ -33,6 +33,9 @@ public class UserModel {
 	}
 
 	public List search(UserBean bean) {
+		
+		
+		
 		return null;
 	}
 

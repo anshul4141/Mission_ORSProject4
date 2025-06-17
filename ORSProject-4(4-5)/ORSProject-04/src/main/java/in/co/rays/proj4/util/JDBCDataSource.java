@@ -8,6 +8,12 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 import in.co.rays.proj4.exception.ApplicationException;
 
+/**
+ * JDBC DataSource is a Data Connection Pool.
+ * 
+ * @author
+ *
+ */
 public final class JDBCDataSource {
 
 	private JDBCDataSource() {

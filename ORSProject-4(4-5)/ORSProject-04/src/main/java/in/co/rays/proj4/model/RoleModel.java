@@ -169,7 +169,7 @@ public class RoleModel {
 
 	}
 
-	public List search(RoleBean bean) {
+	public List search(RoleBean bean, int pageNo, int pageSize) {
 		Connection conn = null;
 		List list = new ArrayList();
 		try {
@@ -180,6 +180,12 @@ public class RoleModel {
 					sql.append(" and name like '" + bean.getName() + "%'");
 				}
 			}
+
+			if (pageSize > 0) {
+				pageNo = (pageNo - 1) * pageSize;
+				sql.append(" limit " + pageNo + ", " + pageSize);
+			}
+
 			System.out.println("sql: " + sql.toString());
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 			ResultSet rs = pstmt.executeQuery();
