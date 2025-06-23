@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.co.rays.proj4.bean.BaseBean;
+import in.co.rays.proj4.util.DataUtility;
+import in.co.rays.proj4.util.DataValidator;
+import in.co.rays.proj4.util.ServletUtility;
 
 public abstract class BaseCtl extends HttpServlet {
 
@@ -68,6 +71,20 @@ public abstract class BaseCtl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("me sabse phle chalunga");
+
+		String op = DataUtility.getString(request.getParameter("operation"));
+
+		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
+				&& !OP_DELETE.equalsIgnoreCase(op) && !OP_RESET.equalsIgnoreCase(op)) {
+
+			if (!validate(request)) {
+				System.out.println("Bctl validate ");
+				BaseBean bean = (BaseBean) populateBean(request);
+				ServletUtility.setBean(bean, request);
+				ServletUtility.forward(getView(), request, response);
+				return;
+			}
+		}
 		super.service(request, response);
 	}
 
