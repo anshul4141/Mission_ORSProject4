@@ -13,9 +13,12 @@ import in.co.rays.proj4.util.ServletUtility;
 @WebServlet(name = "UserRegistrationCtl", urlPatterns = { "/UserRegistrationCtl" })
 public class UserRegistrationCtl extends BaseCtl {
 
+	public static final String OP_SIGN_UP = "SignUp";
+
 	@Override
 	protected boolean validate(HttpServletRequest request) {
-		return super.validate(request);
+		System.out.println("in validate method");
+		return false;
 	}
 
 	@Override
@@ -31,8 +34,8 @@ public class UserRegistrationCtl extends BaseCtl {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		super.doPost(req, resp);
+	protected void doPost(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("in do post method");
 	}
 
 	@Override

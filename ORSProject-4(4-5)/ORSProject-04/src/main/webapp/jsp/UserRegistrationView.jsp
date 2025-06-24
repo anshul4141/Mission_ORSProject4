@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.controller.UserRegistrationCtl"%>
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@page import="in.co.rays.proj4.util.DataUtility"%>
 <%@page import="in.co.rays.proj4.util.HTMLUtility"%>
@@ -127,6 +128,13 @@
 					<td></td>
 				</tr>
 
+			</table>
+
+			<table>
+				<tr>
+					<input type="submit" name="operation"
+						value="<%=UserRegistrationCtl.OP_SIGN_UP%>">
+				</tr>
 			</table>
 
 		</div>
