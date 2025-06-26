@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
+import in.co.rays.proj4.exception.ApplicationException;
+import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.model.UserModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
@@ -106,8 +108,15 @@ public class UserRegistrationCtl extends BaseCtl {
 		bean = (UserBean) populateBean(request);
 
 		if (OP_SIGN_UP.equalsIgnoreCase(op)) {
-			model.add(bean);
-			ServletUtility.setSuccessMessage("User Register Successfully", request);
+			try {
+				model.add(bean);
+				ServletUtility.setBean(bean, request);
+				ServletUtility.setSuccessMessage("User Register Successfully", request);
+			} catch (DuplicateRecordException | ApplicationException e) {
+				ServletUtility.setErrorMessage(e.getMessage(), request);
+				e.printStackTrace();
+			}
+
 		}
 
 		ServletUtility.forward(getView(), request, response);
