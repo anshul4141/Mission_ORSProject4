@@ -6,10 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import in.co.rays.proj4.bean.BaseBean;
+import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
 import in.co.rays.proj4.exception.ApplicationException;
+import in.co.rays.proj4.model.RoleModel;
 import in.co.rays.proj4.model.UserModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
@@ -64,6 +67,10 @@ public class LoginCtl extends BaseCtl {
 
 		UserModel model = new UserModel();
 		UserBean bean = new UserBean();
+		RoleModel rmodel = new RoleModel();
+		RoleBean rbean = new RoleBean();
+
+		HttpSession session = request.getSession();
 
 		bean = (UserBean) populateBean(request);
 
@@ -72,13 +79,18 @@ public class LoginCtl extends BaseCtl {
 				bean = model.authenticate(bean.getLogin(), bean.getPassword());
 
 				if (bean != null) {
-					System.out.println("login successfully");
+
+					session.setAttribute("user", bean);
+					rbean = rmodel.findByPk(bean.getRoleId());
+					session.setAttribute("role", rbean.getName());
+					ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
+
 				} else {
-					System.out.println("invalid login or password");
+					ServletUtility.setErrorMessage("invalid login or password", request);
+					ServletUtility.forward(getView(), request, response);
 				}
 
 			} catch (ApplicationException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

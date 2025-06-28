@@ -113,6 +113,7 @@ public class UserRegistrationCtl extends BaseCtl {
 				ServletUtility.setBean(bean, request);
 				ServletUtility.setSuccessMessage("User Register Successfully", request);
 			} catch (DuplicateRecordException | ApplicationException e) {
+				ServletUtility.setBean(bean, request);
 				ServletUtility.setErrorMessage(e.getMessage(), request);
 				e.printStackTrace();
 			}

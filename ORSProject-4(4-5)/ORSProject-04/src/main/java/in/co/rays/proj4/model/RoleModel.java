@@ -107,7 +107,7 @@ public class RoleModel {
 		}
 	}
 
-	public RoleBean findByPk(int id) {
+	public RoleBean findByPk(long l) {
 
 		Connection conn = null;
 		RoleBean bean = null;
@@ -115,7 +115,7 @@ public class RoleModel {
 			conn = JDBCDataSource.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement("select * from st_role where id = ?");
 
-			pstmt.setInt(1, id);
+			pstmt.setLong(1, l);
 
 			ResultSet rs = pstmt.executeQuery();
 
