@@ -164,6 +164,20 @@ public class DataValidator {
 
 	public static void main(String[] args) {
 
+		System.out.println(DataValidator.isNull("Ram"));
+		System.out.println(DataValidator.isNotNull(""));
+		System.out.println(DataValidator.isInteger("Ram"));
+		System.out.println(DataValidator.isEmail("ram122@gmail.com"));
+		System.out.println(DataValidator.isPassword("Aa@12333333"));
+		System.out.println(DataValidator.isPasswordLength("454545sdsdsd"));
+		System.out.println(DataValidator.isPhoneNo("9858569"));
+		System.out.println(DataValidator.isPhoneLength("5454544545"));
+		System.out.println(DataValidator.isDate("2001-02-02"));
+		System.out.println(DataValidator.isSunday("2026-03-23"));
+		
+		
+		
+		
 	}
 
 }

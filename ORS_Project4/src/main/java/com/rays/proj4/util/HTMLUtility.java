@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import com.rays.proj4.bean.DropdownListBean;
 import com.rays.proj4.model.RoleModel;
 
 public class HTMLUtility {
-	
+
 	public static String getList(String name, String selectedVal, HashMap<String, String> map) {
 
 		StringBuffer sb = new StringBuffer(

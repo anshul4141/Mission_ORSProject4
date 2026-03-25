@@ -52,7 +52,7 @@ public class DataUtility {
 		try {
 			date = formatter.parse(val);
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		}
 		return date;
 	}
@@ -104,6 +104,26 @@ public class DataUtility {
 	}
 
 	public static void main(String[] args) {
+
+		String name = " Ram    ";
+		System.out.println(DataUtility.getString(name));
+
+		int i = 5;
+		String str = DataUtility.getStringData(i);
+		System.out.println(str);
+
+		String s = "5";
+
+		int a = DataUtility.getInt(s);
+		long l = DataUtility.getLong(s);
+		System.out.println(a);
+		System.out.println(l);
+
+		Date dob = DataUtility.getDate("2001-01-01");
+		System.out.println(dob);
+
+		String sdob = DataUtility.getDateString(dob);
+		System.out.println(sdob);
 
 	}
 
