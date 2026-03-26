@@ -11,6 +11,7 @@ import com.rays.proj4.bean.BaseBean;
 import com.rays.proj4.bean.UserBean;
 import com.rays.proj4.util.DataUtility;
 import com.rays.proj4.util.DataValidator;
+import com.rays.proj4.util.ServletUtility;
 
 public abstract class BaseCtl extends HttpServlet {
 
@@ -81,6 +82,16 @@ public abstract class BaseCtl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("in baseCtl service method");
+
+		String op = DataUtility.getString(request.getParameter("operation"));
+
+		if (DataValidator.isNotNull(op)) {
+			if (validate(request) == false) {
+				ServletUtility.forward(getView(), request, response);
+				return;
+			}
+		}
+
 		super.service(request, response);
 	}
 

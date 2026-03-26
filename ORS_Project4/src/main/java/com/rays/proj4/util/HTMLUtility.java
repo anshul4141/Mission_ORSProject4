@@ -28,6 +28,7 @@ public class HTMLUtility {
 			}
 		}
 		sb.append("\n</select>");
+		System.out.println("Dynamic preload == " + sb.toString());
 		return sb.toString();
 	}
 
@@ -88,9 +89,11 @@ public class HTMLUtility {
 
 	public static void main(String[] args) throws Exception {
 
-		// testGetListByMap();
+		HashMap map = new HashMap();
+		map.put("male", "male");
+		map.put("female", "female");
 
-		testGetListByList();
+		System.out.println(HTMLUtility.getList("gender", DataUtility.getStringData(null), map));
 
 	}
 
