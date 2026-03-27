@@ -15,6 +15,8 @@
 	<%@ include file="Header.jsp"%>
 	<form action="<%=ORSView.USER_REGISTRATION_CTL%>" method="post">
 
+		<%-- <%UserBean bean = (UserBean) request.getAttribute("bean"); %> --%>
+
 		<jsp:useBean id="bean" class="com.rays.proj4.bean.UserBean"
 			scope="request"></jsp:useBean>
 
@@ -35,7 +37,7 @@
 			<table>
 				<tr>
 					<th>First Name:</th>
-					<td><input type="text" name="firstName"
+					<td><input type="text" name="firstName" placeholder="enter first name"
 						value="<%=DataUtility.getStringData(bean.getFirstName())%>"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("firstName", request)%></font></td>
 				</tr>
@@ -72,12 +74,14 @@
 				</tr>
 				<tr>
 					<th>Gender:</th>
-					<td><select style="width: 169px; text-align-last: center;"
-						class='form-control' name='gender'>
-							<option selected value=''>-------------Select-------------</option>
-							<option value='female'>female</option>
-							<option value='male'>male</option>
-					</select></td>
+					<td>
+						<%
+						HashMap<String, String> map = new HashMap<String, String>();
+						map.put("male", "male");
+						map.put("female", "female");
+						map.put("other", "other");
+						%> <%=HTMLUtility.getList("gender", bean.getGender(), map)%>
+					</td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("gender", request)%></font></td>
 				</tr>
 				<tr>

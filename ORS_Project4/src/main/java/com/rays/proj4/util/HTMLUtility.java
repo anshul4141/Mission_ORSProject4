@@ -28,7 +28,7 @@ public class HTMLUtility {
 			}
 		}
 		sb.append("\n</select>");
-		System.out.println("Dynamic preload == " + sb.toString());
+		System.out.println(sb.toString());
 		return sb.toString();
 	}
 
