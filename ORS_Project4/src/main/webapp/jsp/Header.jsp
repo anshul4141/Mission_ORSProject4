@@ -21,9 +21,9 @@
 		(<%=session.getAttribute("role")%>)
 	</h3>
 
-	<a href="#"><b>Add User</b></a>
+	<a href="<%=ORSView.USER_CTL%>"><b>Add User</b></a>
 	<b>|</b>
-	<a href="#"><b>User List</b></a>
+	<a href="<%=ORSView.USER_LIST_CTL%>"><b>User List</b></a>
 	<b>|</b>
 	<a href="<%=ORSView.ROLE_CTL%>"><b>Add Role</b></a>
 	<b>|</b>

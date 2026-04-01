@@ -48,4 +48,10 @@ public class CollegeBean extends BaseBean {
 		this.phoneNo = phoneNo;
 	}
 
+	@Override
+	public String getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

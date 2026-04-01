@@ -9,23 +9,36 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.rays.proj4.bean.BaseBean;
-import com.rays.proj4.bean.RoleBean;
+import com.rays.proj4.bean.UserBean;
 import com.rays.proj4.exception.ApplicationException;
 import com.rays.proj4.model.RoleModel;
+import com.rays.proj4.model.UserModel;
 import com.rays.proj4.util.DataUtility;
 import com.rays.proj4.util.PropertyReader;
 import com.rays.proj4.util.ServletUtility;
 
-@WebServlet("/RoleListCtl")
-public class RoleListCtl extends BaseCtl {
+@WebServlet(name = "UserListCtl", urlPatterns = { "/UserListCtl" })
+public class UserListCtl extends BaseCtl {
+
+	@Override
+	protected void preload(HttpServletRequest request) {
+		RoleModel roleModel = new RoleModel();
+		try {
+			List roleList = roleModel.list();
+			request.setAttribute("roleList", roleList);
+		} catch (ApplicationException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Override
 	protected BaseBean populateBean(HttpServletRequest request) {
 
-		RoleBean bean = new RoleBean();
+		UserBean bean = new UserBean();
 
-		bean.setName(DataUtility.getString(request.getParameter("name")));
-		bean.setId(DataUtility.getLong(request.getParameter("roleId")));
+		bean.setFirstName(DataUtility.getString(request.getParameter("firstName")));
+		bean.setLogin(DataUtility.getString(request.getParameter("login")));
+		bean.setRoleId(DataUtility.getLong(request.getParameter("roleId")));
 
 		return bean;
 	}
@@ -37,12 +50,12 @@ public class RoleListCtl extends BaseCtl {
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
 
-		RoleBean bean = (RoleBean) populateBean(request);
-		RoleModel model = new RoleModel();
+		UserBean bean = (UserBean) populateBean(request);
+		UserModel model = new UserModel();
 
 		try {
-			List<RoleBean> list = model.search(bean, pageNo, pageSize);
-			List<RoleBean> next = model.search(bean, pageNo + 1, pageSize);
+			List<UserBean> list = model.search(bean, pageNo, pageSize);
+			List<UserBean> next = model.search(bean, pageNo + 1, pageSize);
 
 			if (list == null || list.isEmpty()) {
 				ServletUtility.setErrorMessage("No record found", request);
@@ -55,6 +68,7 @@ public class RoleListCtl extends BaseCtl {
 			request.setAttribute("nextListSize", next.size());
 
 			ServletUtility.forward(getView(), request, response);
+
 		} catch (ApplicationException e) {
 			e.printStackTrace();
 			return;
@@ -74,8 +88,8 @@ public class RoleListCtl extends BaseCtl {
 		pageNo = (pageNo == 0) ? 1 : pageNo;
 		pageSize = (pageSize == 0) ? DataUtility.getInt(PropertyReader.getValue("page.size")) : pageSize;
 
-		RoleBean bean = (RoleBean) populateBean(request);
-		RoleModel model = new RoleModel();
+		UserBean bean = (UserBean) populateBean(request);
+		UserModel model = new UserModel();
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 		String[] ids = request.getParameterValues("ids");
@@ -93,24 +107,28 @@ public class RoleListCtl extends BaseCtl {
 				}
 
 			} else if (OP_NEW.equalsIgnoreCase(op)) {
-				ServletUtility.redirect(ORSView.ROLE_CTL, request, response);
+				ServletUtility.redirect(ORSView.USER_CTL, request, response);
 				return;
 
 			} else if (OP_DELETE.equalsIgnoreCase(op)) {
 				pageNo = 1;
 				if (ids != null && ids.length > 0) {
-					RoleBean deletebean = new RoleBean();
+					UserBean deletebean = new UserBean();
 					for (String id : ids) {
 						deletebean.setId(DataUtility.getInt(id));
 						model.delete(deletebean);
-						ServletUtility.setSuccessMessage("Data is deleted successfully", request);
+						ServletUtility.setSuccessMessage("User deleted successfully", request);
 					}
 				} else {
 					ServletUtility.setErrorMessage("Select at least one record", request);
 				}
 
 			} else if (OP_RESET.equalsIgnoreCase(op)) {
-				ServletUtility.redirect(ORSView.ROLE_LIST_CTL, request, response);
+				ServletUtility.redirect(ORSView.USER_LIST_CTL, request, response);
+				return;
+
+			} else if (OP_BACK.equalsIgnoreCase(op)) {
+				ServletUtility.redirect(ORSView.USER_LIST_CTL, request, response);
 				return;
 			}
 
@@ -128,6 +146,7 @@ public class RoleListCtl extends BaseCtl {
 			request.setAttribute("nextListSize", next.size());
 
 			ServletUtility.forward(getView(), request, response);
+
 		} catch (ApplicationException e) {
 			e.printStackTrace();
 			return;
@@ -136,6 +155,6 @@ public class RoleListCtl extends BaseCtl {
 
 	@Override
 	protected String getView() {
-		return ORSView.ROLE_LIST_VIEW;
+		return ORSView.USER_LIST_VIEW;
 	}
 }
