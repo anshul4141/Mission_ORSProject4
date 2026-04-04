@@ -51,7 +51,7 @@ public class CollegeBean extends BaseBean {
 	@Override
 	public String getValue() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 }

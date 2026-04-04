@@ -48,9 +48,9 @@ public class RoleListCtl extends BaseCtl {
 				ServletUtility.setErrorMessage("No record found", request);
 			}
 
-			ServletUtility.setList(list, request);
-			ServletUtility.setPageNo(pageNo, request);
-			ServletUtility.setPageSize(pageSize, request);
+			ServletUtility.setList(list, request); // request.setAttribute("list", list)
+			ServletUtility.setPageNo(pageNo, request); // request.setAttribute("pageNo", pageNo)
+			ServletUtility.setPageSize(pageSize, request); // request.setAttribute("pageSize", pageSize)
 			ServletUtility.setBean(bean, request);
 			request.setAttribute("nextListSize", next.size());
 

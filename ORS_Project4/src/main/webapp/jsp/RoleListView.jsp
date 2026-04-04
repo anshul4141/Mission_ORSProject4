@@ -30,12 +30,10 @@
 
         <form action="<%=ORSView.ROLE_LIST_CTL%>" method="post">
             <%
-                int pageNo = ServletUtility.getPageNo(request);
+                int pageNo = ServletUtility.getPageNo(request); // int pageNo = (Integer) = request.getAttribute(pageNo);
                 int pageSize = ServletUtility.getPageSize(request);
                 int index = ((pageNo - 1) * pageSize) + 1;
                 int nextListSize = DataUtility.getInt(request.getAttribute("nextListSize").toString());
-
-                List<RoleBean> roleList = (List<RoleBean>) request.getAttribute("roleList");
 
                 List<RoleBean> list = (List<RoleBean>) ServletUtility.getList(request);
                 Iterator<RoleBean> it = list.iterator();
@@ -120,5 +118,6 @@
             %>
         </form>
     </div>
+    <%@ include file="Footer.jsp"%>
 </body>
 </html>

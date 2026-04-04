@@ -37,7 +37,8 @@
 			<table>
 				<tr>
 					<th>First Name:</th>
-					<td><input type="text" name="firstName" placeholder="enter first name"
+					<td><input type="text" name="firstName"
+						placeholder="enter first name"
 						value="<%=DataUtility.getStringData(bean.getFirstName())%>"></td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("firstName", request)%></font></td>
 				</tr>
@@ -98,5 +99,6 @@
 			</table>
 		</div>
 	</form>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

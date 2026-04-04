@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.rays.proj4.bean.BaseBean;
 import com.rays.proj4.controller.BaseCtl;
+import com.rays.proj4.controller.ORSView;
 
 public class ServletUtility {
 
@@ -110,10 +111,10 @@ public class ServletUtility {
 		return (Integer) request.getAttribute("pageSize");
 	}
 
-//	public static void handleException(Exception e, HttpServletRequest request, HttpServletResponse response)
-//			throws IOException, ServletException {
-//		request.setAttribute("exception", e);
-//		response.sendRedirect(ORSView.ERROR_CTL);
-//	}
+	public static void handleException(Exception e, HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.setAttribute("exception", e);
+		response.sendRedirect(ORSView.ERROR_CTL);
+	}
 	
 }

@@ -11,6 +11,7 @@ public class PropertyReader {
 		String val = null;
 
 		try {
+			System.out.println("properties kes === " + key);
 			val = rb.getString(key); // {0} is required
 		} catch (Exception e) {
 			val = key;
@@ -20,7 +21,9 @@ public class PropertyReader {
 
 	public static String getValue(String key, String param) {
 		String msg = getValue(key); // {0} is required
+		System.out.println("properties value ==== " + msg);
 		msg = msg.replace("{0}", param);
+		System.out.println("compliete error msg === " + msg);
 		return msg;
 	}
 

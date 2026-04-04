@@ -48,7 +48,9 @@ public class HTMLUtility {
 
 		for (DropdownListBean obj : dd) {
 			key = obj.getKey();
+			System.out.println("key === " + key);
 			val = obj.getValue();
+			System.out.println("val === " + val);
 
 			if (key.trim().equals(selectedVal)) {
 				sb.append("\n<option selected value='" + key + "'>" + val + "</option>");
@@ -57,6 +59,9 @@ public class HTMLUtility {
 			}
 		}
 		sb.append("\n</select>");
+
+		System.out.println("daynamic preload =========> " + sb.toString());
+
 		return sb.toString();
 	}
 

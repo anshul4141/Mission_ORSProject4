@@ -224,6 +224,8 @@ public class RoleModel {
 			sql.append(" limit " + pageNo + ", " + pageSize);
 		}
 
+		System.out.println("sql === " + sql.toString());
+
 		Connection conn = null;
 		ArrayList<RoleBean> list = new ArrayList<RoleBean>();
 
