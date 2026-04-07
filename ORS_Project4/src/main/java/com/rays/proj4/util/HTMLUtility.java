@@ -21,7 +21,9 @@ public class HTMLUtility {
 
 		for (String key : keys) {
 			val = map.get(key);
-			if (key.trim().equals(selectedVal)) {
+			System.out.println("selected value === " + selectedVal);
+			if (key.trim().equalsIgnoreCase(selectedVal)) {
+				System.out.println("selected value <<<<<<<===>>>>>>> " + selectedVal);
 				sb.append("\n<option selected value='" + key + "'>" + val + "</option>");
 			} else {
 				sb.append("\n<option value='" + key + "'>" + val + "</option>");
@@ -51,9 +53,8 @@ public class HTMLUtility {
 			System.out.println("key === " + key);
 			val = obj.getValue();
 			System.out.println("val === " + val);
-
 			if (key.trim().equals(selectedVal)) {
-				sb.append("\n<option selected value='" + key + "'>" + val + "</option>");
+				sb.append("<option selected value='" + key + "'>" + val + "</option>");
 			} else {
 				sb.append("\n<option value='" + key + "'>" + val + "</option>");
 			}

@@ -416,4 +416,26 @@ public class UserModel {
 		return list;
 	}
 
+	public long registerUser(UserBean bean) throws DuplicateRecordException, ApplicationException {
+
+		long pk = add(bean);
+
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("login", bean.getLogin());
+		map.put("password", bean.getPassword());
+
+		String message = EmailBuilder.getUserRegistrationMessage(map);
+
+		EmailMessage msg = new EmailMessage();
+
+		msg.setTo(bean.getLogin());
+		msg.setSubject("Registration is successful for ORSProject-04");
+		msg.setMessage(message);
+		msg.setMessageType(EmailMessage.HTML_MSG);
+
+		EmailUtility.sendMail(msg);
+
+		return pk;
+	}
+
 }

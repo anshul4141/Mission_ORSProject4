@@ -15,7 +15,7 @@ import com.rays.proj4.exception.ApplicationException;
 
 public class EmailUtility {
 
-	static ResourceBundle rb = ResourceBundle.getBundle("in.co.rays.proj4.bundle.system");
+	static ResourceBundle rb = ResourceBundle.getBundle("com.rays.proj4.bundle.System");
 
 	private static final String SMTP_HOST_NAME = rb.getString("smtp.server");
 	private static final String SMTP_PORT = rb.getString("smtp.port");

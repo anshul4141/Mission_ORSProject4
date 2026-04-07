@@ -113,6 +113,7 @@
 				<tr>
 					<th align="left">Role<span style="color: red">*</span></th>
 					<td><%=HTMLUtility.getList("roleId", String.valueOf(bean.getRoleId()), roleList)%></td>
+					</td>
 					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("roleId", request)%></font></td>
 				</tr>
 				<tr>
