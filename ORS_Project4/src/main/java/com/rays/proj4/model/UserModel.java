@@ -7,19 +7,43 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.rays.proj4.bean.UserBean;
 import com.rays.proj4.exception.ApplicationException;
 import com.rays.proj4.exception.DatabaseException;
 import com.rays.proj4.exception.DuplicateRecordException;
 import com.rays.proj4.exception.RecordNotFoundException;
+import com.rays.proj4.test.TestLog4J;
 import com.rays.proj4.util.EmailBuilder;
 import com.rays.proj4.util.EmailMessage;
 import com.rays.proj4.util.EmailUtility;
 import com.rays.proj4.util.JDBCDataSource;
 
+/**
+ * UserModel class handles all database operations related to User.
+ * 
+ * It provides methods for: - CRUD operations (Add, Update, Delete) -
+ * Authentication - Password management (change/forget) - Search with pagination
+ * - User registration with email notification
+ * 
+ * This class interacts with ST_USER table.
+ * 
+ * @author Ram
+ */
 public class UserModel {
 
+	Logger log = Logger.getLogger(UserModel.class);
+
+	/**
+	 * Generates next primary key for ST_USER table.
+	 * 
+	 * @return next primary key
+	 * @throws DatabaseException
+	 */
 	public Integer nextPk() throws DatabaseException {
+
+		log.debug("nextPk is called");
 
 		Connection conn = null;
 		int pk = 0;
@@ -41,6 +65,14 @@ public class UserModel {
 		return pk + 1;
 	}
 
+	/**
+	 * Adds a new user record.
+	 * 
+	 * @param bean UserBean containing user data
+	 * @return generated primary key
+	 * @throws ApplicationException
+	 * @throws DuplicateRecordException if login already exists
+	 */
 	public long add(UserBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
@@ -88,6 +120,13 @@ public class UserModel {
 		return pk;
 	}
 
+	/**
+	 * Updates an existing user record.
+	 * 
+	 * @param bean UserBean with updated data
+	 * @throws DuplicateRecordException if login already exists
+	 * @throws ApplicationException
+	 */
 	public void update(UserBean bean) throws DuplicateRecordException, ApplicationException {
 
 		Connection conn = null;
@@ -132,6 +171,12 @@ public class UserModel {
 		}
 	}
 
+	/**
+	 * Deletes a user record.
+	 * 
+	 * @param bean UserBean containing ID
+	 * @throws ApplicationException
+	 */
 	public void delete(UserBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -156,6 +201,13 @@ public class UserModel {
 		}
 	}
 
+	/**
+	 * Finds user by primary key.
+	 * 
+	 * @param pk user ID
+	 * @return UserBean
+	 * @throws ApplicationException
+	 */
 	public UserBean findByPk(long pk) throws ApplicationException {
 
 		UserBean bean = null;
@@ -195,6 +247,13 @@ public class UserModel {
 		return bean;
 	}
 
+	/**
+	 * Finds user by login ID.
+	 * 
+	 * @param login user login
+	 * @return UserBean
+	 * @throws ApplicationException
+	 */
 	public UserBean findByLogin(String login) throws ApplicationException {
 
 		StringBuffer sql = new StringBuffer("select * from st_user where login = ?");
@@ -234,6 +293,14 @@ public class UserModel {
 		return bean;
 	}
 
+	/**
+	 * Authenticates user using login & password.
+	 * 
+	 * @param login    user login
+	 * @param password user password
+	 * @return UserBean if valid, otherwise null
+	 * @throws ApplicationException
+	 */
 	public UserBean authenticate(String login, String password) throws ApplicationException {
 
 		UserBean bean = null;
@@ -273,6 +340,9 @@ public class UserModel {
 		return bean;
 	}
 
+	/**
+	 * Changes user password.
+	 */
 	public boolean changePassword(Long id, String oldPassword, String newPassword)
 			throws RecordNotFoundException, ApplicationException {
 
@@ -311,6 +381,9 @@ public class UserModel {
 		return flag;
 	}
 
+	/**
+	 * Sends password to user email (forgot password).
+	 */
 	public boolean forgetPassword(String login) throws RecordNotFoundException, ApplicationException {
 
 		UserBean userData = findByLogin(login);
@@ -343,6 +416,9 @@ public class UserModel {
 		return flag;
 	}
 
+	/**
+	 * Searches users with filters and pagination.
+	 */
 	public List<UserBean> search(UserBean bean, int pageNo, int pageSize) throws ApplicationException {
 
 		Connection conn = null;
@@ -416,6 +492,9 @@ public class UserModel {
 		return list;
 	}
 
+	/**
+	 * Registers a new user and sends email.
+	 */
 	public long registerUser(UserBean bean) throws DuplicateRecordException, ApplicationException {
 
 		long pk = add(bean);

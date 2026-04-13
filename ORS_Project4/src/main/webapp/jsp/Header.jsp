@@ -64,6 +64,8 @@
 	<b>|</b>
 	<a href="FacultyListCtl"><b>Faculty List</b></a>
 	<b>|</b>
+	<a target="blank" href="<%=ORSView.JAVA_DOC%>"><b>Java Doc</b></a>
+	<b>|</b>
 	<a href="<%=ORSView.LOGIN_CTL + "?operation=Logout"%>"><b>Logout</b></a>
 	<%
 	} else {
