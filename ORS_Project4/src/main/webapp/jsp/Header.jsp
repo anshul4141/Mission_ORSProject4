@@ -7,6 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<script src="/ORS_Project4/js/checkbox.js"></script>
+<script src="/ORS_Project4/js/datepicker.js"></script>
+
 </head>
 <body>
 	<%

@@ -24,10 +24,10 @@ public interface ORSView {
 	public String MARKSHEET_MERIT_LIST_CTL = APP_CONTEXT + "/MarksheetMeritListCtl";
 
 	public String USER_VIEW = PAGE_FOLDER + "/UserView.jsp";
-	public String USER_CTL = APP_CONTEXT + "/UserCtl";
+	public String USER_CTL = APP_CONTEXT + "/ctl/UserCtl";
 
 	public String USER_LIST_VIEW = PAGE_FOLDER + "/UserListView.jsp";
-	public String USER_LIST_CTL = APP_CONTEXT + "/UserListCtl";
+	public String USER_LIST_CTL = APP_CONTEXT + "/ctl/UserListCtl";
 
 	public String ROLE_VIEW = PAGE_FOLDER + "/RoleView.jsp";
 	public String ROLE_CTL = APP_CONTEXT + "/RoleCtl";
