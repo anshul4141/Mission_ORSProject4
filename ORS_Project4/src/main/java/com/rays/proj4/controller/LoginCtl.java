@@ -88,14 +88,23 @@ public class LoginCtl extends BaseCtl {
 			try {
 				bean = model.authenticate(bean.getLogin(), bean.getPassword());
 
+				String uri = request.getParameter("URI");
+
 				if (bean != null) {
 					session.setAttribute("user", bean);
 					RoleBean rolebean = role.findByPk(bean.getRoleId());
 					if (rolebean != null) {
 						session.setAttribute("role", rolebean.getName());
 					}
-					ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
-					return;
+
+					if ("null".equalsIgnoreCase(uri)) {
+						ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
+						return;
+					} else {
+						ServletUtility.redirect(uri, request, response);
+						return;
+					}
+
 				} else {
 					ServletUtility.setBean(bean, request);
 					ServletUtility.setErrorMessage("Invalid LoginId And Password", request);
@@ -108,6 +117,7 @@ public class LoginCtl extends BaseCtl {
 			ServletUtility.redirect(ORSView.USER_REGISTRATION_CTL, request, response);
 			return;
 		}
+
 		ServletUtility.forward(getView(), request, response);
 	}
 

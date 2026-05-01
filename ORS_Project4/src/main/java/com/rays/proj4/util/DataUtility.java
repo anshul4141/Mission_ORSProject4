@@ -106,24 +106,28 @@ public class DataUtility {
 	public static void main(String[] args) {
 
 		String name = " Ram    ";
-		System.out.println(DataUtility.getString(name));
+		System.out.println("name=" + name);
+		System.out.println("name trim=" + DataUtility.getString(name));
 
-		int i = 5;
-		String str = DataUtility.getStringData(i);
-		System.out.println(str);
+		System.out.println("--------------");
 
 		String s = "5";
+		int i = DataUtility.getInt(s);
+		System.out.println(i);
 
-		int a = DataUtility.getInt(s);
-		long l = DataUtility.getLong(s);
-		System.out.println(a);
-		System.out.println(l);
+		System.out.println("-------------");
 
-		Date dob = DataUtility.getDate("2001-01-01");
-		System.out.println(dob);
+		String strdate = "2001-01-01";
 
-		String sdob = DataUtility.getDateString(dob);
-		System.out.println(sdob);
+		Date date = DataUtility.getDate(strdate);
+
+		System.out.println(date);
+
+		System.out.println("------------");
+
+		String strdate1 = DataUtility.getDateString(date);
+
+		System.out.println(strdate1);
 
 	}
 

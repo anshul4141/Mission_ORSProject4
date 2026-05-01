@@ -16,6 +16,12 @@
 		<jsp:useBean id="bean" class="com.rays.proj4.bean.UserBean"
 			scope="request"></jsp:useBean>
 
+		<%
+		String URI = (String) request.getAttribute("uri");
+		%>
+
+		<input type="hidden" name="URI" value="<%=URI%>">
+
 		<div align="center">
 			<h1>Login</h1>
 
@@ -55,7 +61,8 @@
 				</tr>
 				<tr>
 					<th></th>
-					<td><a href="<%=ORSView.FORGET_PASSWORD_CTL%>"><b>Forget my password?</b></a>&nbsp;</td>
+					<td><a href="<%=ORSView.FORGET_PASSWORD_CTL%>"><b>Forget
+								my password?</b></a>&nbsp;</td>
 				</tr>
 			</table>
 		</div>
