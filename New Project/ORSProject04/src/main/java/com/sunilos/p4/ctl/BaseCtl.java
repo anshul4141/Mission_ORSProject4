@@ -142,10 +142,6 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 		if (OP_CANCEL.equalsIgnoreCase(op)) {
 			ServletUtility.redirect(getView(op), request, response);
 			return;
-		} else if (OP_DELETE.equalsIgnoreCase(op) && !(this instanceof BaseListCtl)) {
-			// Handle Delete operation
-			doDelete(request, response);
-			return;
 		}
 
 		BaseBean bean = populateBean(request);
@@ -160,7 +156,6 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 		try {
 			super.service(request, response);
 		} catch (DuplicateRecordException e) {
-			// Handle if any duplicate record exception
 			ServletUtility.setBean(bean, request);
 			ServletUtility.setErrorMessage(e.getMessage(), request);
 			ServletUtility.forwardPage(getView(), request, response);
