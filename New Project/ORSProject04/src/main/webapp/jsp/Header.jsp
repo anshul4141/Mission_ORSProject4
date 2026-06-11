@@ -13,7 +13,7 @@ boolean isStudent = loggedIn && userBean.getRoleId() == RoleBean.STUDENT;
 String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttribute("role") + ")" : "Guest";
 %>
 
-<nav class="navbar navbar-expand-lg navbar-dark py-0"
+<nav class="navbar navbar-expand-lg py-0"
 	style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%); min-height: 58px;">
 	<div class="container-fluid px-4">
 
@@ -42,7 +42,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<!-- ---- Marksheet ---- -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
-					data-bs-toggle="dropdown" aria-expanded="false"> <i
+					data-bs-toggle="dropdown"> <i
 						class="bi bi-file-earmark-text me-1"></i> Marksheet
 				</a>
 					<ul
@@ -92,8 +92,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				%>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
-					data-bs-toggle="dropdown" aria-expanded="false"> <i
-						class="bi bi-mortarboard me-1"></i> Academics
+					data-bs-toggle="dropdown"> <i class="bi bi-mortarboard me-1"></i>
+						Academics
 				</a>
 					<ul
 						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
@@ -230,7 +230,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item" href="<%=ORSView.PRODUCT_CTL%>">
 								<i class="bi bi-person-plus me-2 text-success"></i> Add Product
 						</a></li>
-						<li><a class="dropdown-item" href="#"> <i
+						<li><a class="dropdown-item"
+							href="<%=ORSView.PRODUCT_LIST_CTL%>"> <i
 								class="bi bi-person-lines-fill me-2 text-primary"></i> Product
 								List
 						</a></li>
@@ -347,7 +348,6 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<!-- Home -->
 				<li class="nav-item"><a class="nav-link px-2"
 					href="<%=ORSView.WELCOME_CTL%>"> <i class="bi bi-house-fill"></i>
-						<span class="d-lg-none ms-1">Home</span>
 				</a></li>
 
 				<!-- My Account dropdown (logged-in) -->
