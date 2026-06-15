@@ -1,0 +1,66 @@
+1.   What is bootstrap ?
+Ans. Bootstrap is open source html, css and java script library to develop responsive and dynamic or device friendly website. 
+
+2.   How to configure bootstrap in project ?
+Ans. bootstrap ke liye index.jsp par 2 library add ki hai
+     1. <link></link> tag me bootstrap.min.css version 5.3.3
+     2. <script></script> tag me bootstrap.bundle.min.js version 5.3.3
+
+3.   How to create navbar ?
+Ans. Navbar ke liye hamne <nav></nav> tag me class="navbar navbar-expand-lg ka use kiya hai, or style-background me humne linear-gradient use kiya hai.
+
+4.   Navbar me dropdown kese lagaya ?
+Ans. Navbar me dropdown ke liye 4 classes ka use kiya hai -->
+     <li class="dropdown">
+       <a class="dropdown-toggle"></a>
+       <ul class="dropdown-menu">  
+         <li class="dropdown-item">
+           <a href="#" >login</a>
+         </li>
+           <div class="dropdown-divider"></div> // line ke liye
+       </ul>
+     </li>
+
+5.   Icon ke liye kya kiya hai or sare icon ke name
+Ans. icon ke liye humne index.jsp par bootstrap-icons.min.css version 1.11.3 library add ki hai or <i></i> tag me
+     humne class="bi bi" ka use kiya hai
+
+6.   Mobile toggler ke liye kya kiya hai ?
+Ans. <button class="navbar-toggler" type="button"
+	 data-toggle="collapse" data-target="#mainNav">
+	 <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+7.   Button kese banaya ?
+Ans. <button type="submit" name="operation" value="<%=BaseCtl.OP_SAVE%>"
+	class="btn btn-primary">
+	 <i class="bi bi-save me-1"></i> Save
+    </button>
+
+8.   Form banane ke liye kya kiya ?
+Ans. <div class="justify-content-center">
+      <div class="col-12 col-sm-9 col-md-6 col-lg-4">
+        <div class="card">
+         <div class="card-header">Login</div>
+          <div class="card-body">
+           <form></form>
+          </div>
+      </div>
+     </div>
+
+9.   Table kese banai ?
+Ans. table ke liye humne table tag me class table table-border or table-hover ka use kiya hai 
+<table class="table table-border table-hover"></table>
+
+10   Error message red box me kese aa raha hai ?
+Ans. Iske liye humne class alert alert-danger ka use kiya hai
+    <div class='alert alert-danger alert-dismissible'>
+       <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+    </div>
+
+11.  Success message green box me kese aa raha hai ?
+Ans. Iske liye humne class alert alert-success ka use kiya hai
+    <div class='alert alert-success alert-dismissible'>
+       <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
+    </div>
