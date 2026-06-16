@@ -1,0 +1,108 @@
+#. InputValidation same as old
+#. BusinessValidation same as old
+#. UserRegistration and Login flow same as old
+#. Mail same as old(smtp)
+
+note: check new dependencies  and there version
+
+--------------------------------------------------------------------------------------
+
+Q1. Add User ka Flow ?
+
+Ans:
+
+1. UserView.jsp par Save button par click kiya, form tag me action="UserCtl" aur method="post" diya, to request UserCtl par gayi.
+
+2. UserCtl ne BaseCtl ko extend kiya hai, isliye BaseCtl ki service() method chali.
+
+3. service() method me preload() chali aur Operation get hua.
+
+4. Condition lagi:
+
+   ```java
+   POST.equalsIgnoreCase(request.getMethod()) && !validate(request)
+   ```
+
+   Agar condition true hoti hai to request wahi se UserView.jsp par forward ho jati hai, aur agar condition false hoti hai to BaseCtl ki doPost() method chalti hai.
+
+5. doPost() method me populateBean() se View ka data Bean me set hua aur getModel() method se Model ka object mila, fir UserModel ki add() method call hui.
+
+6. UserModel ki add() method me query chali aur record database me insert ho gaya.
+
+7. BaseCtl me ServletUtility.setSuccessMessage() se success message set kiya, View par forward kiya, aur ServletUtility.getSuccessMessage() se message get karke expression tag me print kiya.
+
+--------------------------------------------------------------------------------------------------------
+
+Q2. User List Ka Flow ?
+
+Ans:
+
+1. Header.jsp par User List ki link par click kiya, request UserListCtl par gayi.
+
+2. UserListCtl ne BaseListCtl ko extend kiya aur BaseListCtl ne BaseCtl ko extend kiya.
+
+3. BaseCtl ki service() method chali, preload() call hui aur operation get kiya. Condition false hui kyunki request method GET hai.
+
+4. To BaseListCtl ki doGet() method call hui or usme doPost() call ki, int pageNo aur int pageSize liya gaya.
+
+5. populateBean() se View ka data Bean me set kiya aur Bean ka object mila.
+
+6. Fir getModel() method se UserModel ka object get kiya. UserModel ne BaseModel ko extend kiya hai.
+
+7. BaseModel ki search() method call hui jisme teen parameter pass kiye: bean, pageNo aur pageSize. Is method se List return hui.
+
+8. List ko List object me hold kiya.
+
+9. ServletUtility ki setList() se List ko set kiya, setPageNo() se pageNo set kiya aur setPageSize() se pageSize set kiya.
+
+10. Request ko View par forward kiya.
+
+11. View par ServletUtility ki getList() se List get ki aur List object me hold ki.
+
+12. Iterator ka use karke List me se ek-ek value ko iterate kiya aur expression tag me print kiya.
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q3. Delete Ka flow ?
+
+Ans:
+
+1. UserListView par Checkbox banaya or name me ids di value me expression tag me bean.getId() pass kiya
+
+2. Delete ke button par click kiya or form me action="UserListCtl" diya or method="post".
+
+3. request UserListCtl par gai UserListCtl par BaseListCtl ko extends kiya or BaseListCtl me BaseCtl extends kiya
+
+4. BaseCtl ki service method chali !validate vali condition false hui.
+
+5. BaseListCtl ki doPost() method call hui request.getParameterValues se ids ko get kiya String[] ids me hold kiya.
+
+6. Condtion di agar operation delete hai to usme yek or condtion di ids != null && ids.lenght > 0 toh forEach loop se yek yek id ko iterate kiya
+
+7. getModel se UserModel ka obj get kiya UserModel me BaseModel ko extends kiya BaseModel ki delete method call hui or usme id pass kiya
+
+8. success message set kiya view par forward kiya or expression tag me print kiya .
+
+---------------------------------------------------------------------------------------------------------------------
+
+Q4. Edit Ki link par click kiya toh data fill hoke kese aya ?
+
+Ans:
+
+1. UserListView par edit ki link banai or queryString se id ko append kiya.
+
+2. request UserCtl par gai UserCtl par BaseCtl ko extends kiya BaseCtl ki doGet() method chali.
+
+3. request.getParameter() se id ko get kiya long id me hold kiya.
+
+4. condtion di if(id > 0) hoti hai toh getModel se UserModel ka object get Kiya UserModel me BaseModel ko extends kiya
+
+5. BaseModel ki findByPk chali bean mila bean ko servletUtiliti.setBean() se set kiya.
+
+6. View par forward kiya or jsp:usebean tag se bean ko get or value attribute me print karaya.
+
+
+Q5. Update ka flow
+
+Ans: TODO
+
