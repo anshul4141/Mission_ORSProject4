@@ -11,11 +11,6 @@ import com.sunilos.p4.util.JDBCDataSource;
 public class ProductModel extends BaseModel<ProductBean> {
 
 	@Override
-	public ProductBean getBean() {
-		return new ProductBean();
-	}
-
-	@Override
 	public long add(ProductBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model add Started");
 		Connection conn = null;
@@ -92,6 +87,11 @@ public class ProductModel extends BaseModel<ProductBean> {
 	@Override
 	public String getTable() {
 		return "st_product";
+	}
+
+	@Override
+	public ProductBean getBean() {
+		return new ProductBean();
 	}
 
 }
