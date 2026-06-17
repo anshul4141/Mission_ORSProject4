@@ -1,0 +1,23 @@
+1. pom.xml me jasper ki dependency add ki version 6.20.6
+
+2. Jasper Report generate karne ke liye UserReportCtl banaya aur usme BaseReportCtl ko extend kiya.
+
+3. UserReportCtl me BaseReportCtl ki teen methods ko override kiya: getList(), getView(), aur getCompiledReportKey().
+
+4. getList() method model se data search karne ke liye use ki.
+
+5. getView() method JRXML file ka path return karne ke liye use ki.
+
+6. getCompiledReportKey() method report ki unique key return karne ke liye use ki.
+
+7. Fir humne BaseReportCtl me Jasper ki 5 predefined classes ka use kiya:
+
+   1. JRBeanCollectionDataSource: User List ke data ko report data me convert karne ke liye.
+   2. JasperCompileManager: JRXML file ko compile karne ke liye.
+   3. JasperFillManager: Report template aur jo data search hoke aaya usko merge karne ke liye.
+   4. JasperExportManager: PDF generate karne ke liye.
+   5. JRDocxExporter: DOCX file generate karne ke liye.
+
+8. Aur fir generated PDF ko browser par display karne aur DOCX ko download karne ke liye response.getOutputStream() method ka use kiya.
+
+9. Jasper report ka extension .jrxml hota - Jasper Report eXtensible Markup Language.
