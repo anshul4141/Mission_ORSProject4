@@ -1,3 +1,6 @@
+Q What is jasper & jasper report ?
+Ans: Jasper is a open source java-class library used to genrate docs and pdf according to the list of records.
+
 1. pom.xml me jasper ki dependency add ki version 6.20.6
 
 2. Jasper Report generate karne ke liye UserReportCtl banaya aur usme BaseReportCtl ko extend kiya.
