@@ -1,0 +1,33 @@
+Q1. Hindi English ke liye kya kiya hai ?
+
+Ans:
+
+Hindi English ke liye humne ResourceBundle ka use kiya hai. Uski do properties files banayi hain:
+
+1. message_en.properties
+2. message_hi.properties
+
+Aur key ke through uski value get karne ke liye humne MessageSource class banayi hai, jisme humne ResourceBundle ka object banaya hai. `setLocale()` method ka use karke language set ki hai aur `rb.getString()` me key pass ki hai, aur uski value ko return karaya hai. Fir expression tag me View par print karaya hai.
+
+Language Ka Flow --->
+
+1. Header.jsp par `<form></form>` tag me select aur option tag ka use karke Hindi aur English ke options banaye.
+
+```html
+<form>
+   <select name="lang" onchange="this.form.submit()">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+   </select>
+</form>
+```
+
+2. User ne language select ki, to `onchange="this.form.submit()"` ki wajah se form submit hua aur selected language query string me `lang` parameter ke roop me request ke saath gayi.
+
+3. Humne ek filter banaya **LanguageFilter**, jisme humne `@WebFilter("/*")` lagaya, jisse vo har request par chalega.
+
+4. Uski `doFilter()` method me `request.getParameter()` method se humne `lang` ko get kiya aur `MessageSource` ki `setLocale(lang)` method me pass kiya.
+
+5. `setLocale()` method me `ResourceBundle` ka use karke `message_en.properties` ya `message_hi.properties` file ko load kiya.
+
+6. View par `MessageSource` ki `get()` method ka use karke usme key pass ki aur value ko expression tag me print karaya.
