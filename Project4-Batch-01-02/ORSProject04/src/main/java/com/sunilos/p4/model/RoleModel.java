@@ -1,0 +1,71 @@
+package com.sunilos.p4.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.sunilos.p4.bean.RoleBean;
+import com.sunilos.p4.exception.ApplicationException;
+import com.sunilos.p4.exception.DuplicateRecordException;
+import com.sunilos.p4.util.JDBCDataSource;
+
+public class RoleModel extends BaseModel<RoleBean> {
+
+	@Override
+	public long add(RoleBean bean) throws ApplicationException, DuplicateRecordException {
+
+		Connection conn = null;
+
+		int pk = 0;
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			conn.setAutoCommit(false); // Begin transaction
+
+			pk = nextPk();
+
+			PreparedStatement pstmt = conn
+					.prepareStatement("INSERT INTO " + getTable() + " values(?, ?, ?, ?, ?, ?, ?)");
+			pstmt.setInt(1, pk);
+			pstmt.setString(2, bean.getName());
+			pstmt.setString(3, bean.getDescription());
+			pstmt.setString(4, bean.getCreatedBy());
+			pstmt.setString(5, bean.getModifiedBy());
+			pstmt.setTimestamp(6, bean.getCreatedDatetime());
+			pstmt.setTimestamp(7, bean.getModifiedDatetime());
+			pstmt.executeUpdate();
+
+			conn.commit(); // End transaction
+			System.out.println("data inserted successfully");
+			pstmt.close();
+
+		} catch (SQLException e) {
+			JDBCDataSource.rollBack(conn);
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+		return pk;
+	}
+
+	@Override
+	public void update(RoleBean bean) throws ApplicationException, DuplicateRecordException {
+
+	}
+
+	@Override
+	public String getWhereClause(RoleBean bean) {
+		return null;
+	}
+
+	@Override
+	public RoleBean getBean() {
+		return new RoleBean();
+	}
+
+	@Override
+	public String getTable() {
+		return "st_role";
+	}
+
+}

@@ -33,7 +33,7 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-	<h1>Welcome to online result system</h1>
+	<h1>ORS - Online Result System</h1>
 
 	<!-- Bootstrap JS -->
 	<script
