@@ -18,6 +18,12 @@ public class RoleModel extends BaseModel<RoleBean> {
 
 		int pk = 0;
 
+		RoleBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("role name already exist");
+		}
+
 		try {
 
 			conn = JDBCDataSource.getConnection();
@@ -51,6 +57,45 @@ public class RoleModel extends BaseModel<RoleBean> {
 	@Override
 	public void update(RoleBean bean) throws ApplicationException, DuplicateRecordException {
 
+		Connection conn = null;
+
+		RoleBean existBean = findByName(bean.getName());
+
+		if (existBean != null && bean.getId() != existBean.getId()) {
+			throw new DuplicateRecordException("role name already exist");
+		}
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			conn.setAutoCommit(false); // Begin transaction
+
+			PreparedStatement pstmt = conn.prepareStatement("UPDATE " + getTable()
+					+ " SET name = ?, description = ?, created_by = ?, modified_by = ?, created_datetime = ?, modified_datetime = ? WHERE id = ?");
+
+			pstmt.setString(1, bean.getName());
+			pstmt.setString(2, bean.getDescription());
+			pstmt.setString(3, bean.getCreatedBy());
+			pstmt.setString(4, bean.getModifiedBy());
+			pstmt.setTimestamp(5, bean.getCreatedDatetime());
+			pstmt.setTimestamp(6, bean.getModifiedDatetime());
+			pstmt.setLong(7, bean.getId());
+
+			pstmt.executeUpdate();
+
+			conn.commit(); // End transaction
+			System.out.println("data updated successfully");
+			pstmt.close();
+
+		} catch (SQLException e) {
+			JDBCDataSource.rollBack(conn);
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+	}
+
+	public RoleBean findByName(String name) {
+		return findByUniqueColumn("NAME", name);
 	}
 
 	@Override

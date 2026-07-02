@@ -14,9 +14,7 @@ import com.sunilos.p4.util.JDBCDataSource;
 
 public abstract class BaseModel<T extends BaseBean> {
 
-	public abstract long add(T bean) throws ApplicationException, DuplicateRecordException;
-
-	public abstract void update(T bean) throws ApplicationException, DuplicateRecordException;
+	// common methods =====>
 
 	public Integer nextPk() throws DatabaseException {
 
@@ -44,16 +42,83 @@ public abstract class BaseModel<T extends BaseBean> {
 		return pk + 1;
 	}
 
-	public void delete(int id) {
+	public void delete(int id) throws ApplicationException, DuplicateRecordException {
+		Connection conn = null;
 
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			conn.setAutoCommit(false); // Begin transaction
+
+			PreparedStatement pstmt = conn.prepareStatement("DELETE FROM " + getTable() + " WHERE ID = ?");
+
+			pstmt.setInt(1, id);
+
+			pstmt.executeUpdate();
+
+			conn.commit(); // End transaction
+			System.out.println("data delete successfully");
+			pstmt.close();
+
+		} catch (SQLException e) {
+			JDBCDataSource.rollBack(conn);
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
 	}
 
-	public T findByPk(long pk) {
-		return null;
+	public T findByPk(long pk) throws ApplicationException {
+
+		Connection conn = null;
+		T bean = null;
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM " + getTable() + " WHERE id = ?");
+			pstmt.setLong(1, pk);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				bean = getBean();
+				bean.setResultset(rs);
+			}
+
+		} catch (Exception e) {
+			throw new ApplicationException("Exception : Exception in getting User by pk");
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+
+		return bean;
 	}
 
 	public T findByUniqueColumn(String column, String value) {
-		return null;
+		Connection conn = null;
+		T bean = null;
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			PreparedStatement pstmt = conn
+					.prepareStatement("SELECT * FROM " + getTable() + " WHERE " + column + "  = ?");
+			pstmt.setString(1, value);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				bean = getBean();
+				bean.setResultset(rs);
+			}
+
+		} catch (Exception e) {
+			throw new ApplicationException("Exception : Exception in getting User by pk");
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+
+		return bean;
 	}
 
 	public List<T> search(T bean, int pageNo, int pageSize) {
@@ -71,6 +136,12 @@ public abstract class BaseModel<T extends BaseBean> {
 	public List list() {
 		return list(0, 0);
 	}
+
+	// abstract methods =======>
+
+	public abstract long add(T bean) throws ApplicationException, DuplicateRecordException;
+
+	public abstract void update(T bean) throws ApplicationException, DuplicateRecordException;
 
 	public abstract String getWhereClause(T bean);
 
