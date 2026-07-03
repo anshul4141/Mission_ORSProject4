@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.sunilos.p4.bean.BaseBean;
@@ -121,18 +122,55 @@ public abstract class BaseModel<T extends BaseBean> {
 		return bean;
 	}
 
+	// with search filter with pagination
 	public List<T> search(T bean, int pageNo, int pageSize) {
-		return null;
+
+		List<T> list = new ArrayList<T>();
+		Connection conn = null;
+
+		StringBuffer sql = new StringBuffer("SELECT * FROM " + getTable() + " WHERE 1 = 1");
+
+		sql.append(this.getWhereClause(bean));
+
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			sql.append(" LIMIT " + pageNo + ", " + pageSize);
+		}
+
+		try {
+			System.out.println("search query ====> " + sql.toString());
+			conn = JDBCDataSource.getConnection();
+			PreparedStatement stmt = conn.prepareStatement(sql.toString());
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				bean = getBean();
+				bean.setResultset(rs);
+				list.add(bean);
+			}
+
+			rs.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+
+		return list;
 	}
 
+	// with search filter without pagination
 	public List search(T bean) {
 		return search(bean, 0, 0);
 	}
 
+	// without search filter with pagination
 	public List<T> list(int pageNo, int pageSize) {
-		return null;
+		return search(null, pageNo, pageSize);
 	}
 
+	// without search filter or without pagination
 	public List list() {
 		return list(0, 0);
 	}
