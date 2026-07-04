@@ -1,0 +1,387 @@
+15-May-2026 16:02:36.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:02:36.403 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:02:36.405 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:02:36.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:02:36.406 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:02:36.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:02:36.407 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:02:36.408 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:02:36.408 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:02:36.409 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:02:36.409 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:02:36.429 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:02:36.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:02:36.430 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:02:36.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:02:36.431 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:02:36.432 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:02:36.432 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:02:36.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:02:36.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:02:36.433 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:02:36.434 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:02:36.434 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:02:36.434 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:02:36.445 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:02:36.479 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:02:36.923 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:02:36.990 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1107] milliseconds
+15-May-2026 16:02:37.102 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:02:37.103 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:02:37.162 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:02:39.687 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:02:39.817 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [2,654] ms
+15-May-2026 16:02:39.819 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:02:39.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [65] ms
+15-May-2026 16:02:39.885 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:02:40.684 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [799] ms
+15-May-2026 16:02:40.686 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:02:40.760 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [74] ms
+15-May-2026 16:02:40.762 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:02:40.838 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [76] ms
+15-May-2026 16:02:40.840 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:02:40.889 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [48] ms
+15-May-2026 16:02:40.900 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:02:41.009 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [4017] milliseconds
+15-May-2026 16:05:53.848 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:05:53.975 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:05:54.025 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:05:54.046 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:06:17.172 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:06:17.181 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:06:17.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:06:17.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:06:17.182 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:06:17.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:06:17.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:06:17.183 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:06:17.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:06:17.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:06:17.184 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:06:17.203 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:06:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:06:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:06:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:06:17.204 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:06:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:06:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:06:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:06:17.205 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:06:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:06:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:06:17.206 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:06:17.207 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:06:17.213 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:06:17.220 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:06:17.514 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:06:17.570 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [740] milliseconds
+15-May-2026 16:06:17.660 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:06:17.661 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:06:17.706 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:06:19.744 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:06:19.882 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [2,174] ms
+15-May-2026 16:06:19.883 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:06:19.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [65] ms
+15-May-2026 16:06:19.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:06:20.643 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [694] ms
+15-May-2026 16:06:20.644 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:06:20.734 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [90] ms
+15-May-2026 16:06:20.735 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:06:20.800 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [65] ms
+15-May-2026 16:06:20.801 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:06:20.847 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [46] ms
+15-May-2026 16:06:20.856 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:06:20.949 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [3377] milliseconds
+15-May-2026 16:07:29.902 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:07:30.041 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:07:30.096 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:07:30.117 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:10:47.128 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:10:47.139 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:10:47.140 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:10:47.141 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:10:47.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:10:47.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:10:47.142 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:10:47.143 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:10:47.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:10:47.144 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:10:47.145 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:10:47.162 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:10:47.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:10:47.163 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:10:47.164 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:10:47.165 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:10:47.165 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:10:47.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:10:47.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:10:47.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:10:47.167 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:10:47.168 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:10:47.169 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:10:47.169 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:10:47.176 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:10:47.186 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:10:47.822 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:10:47.940 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1199] milliseconds
+15-May-2026 16:10:48.055 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:10:48.056 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:10:48.131 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:10:52.105 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:10:52.289 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [138] milliseconds.
+15-May-2026 16:10:52.336 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [4,206] ms
+15-May-2026 16:10:52.336 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:10:52.422 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [86] ms
+15-May-2026 16:10:52.422 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:10:53.507 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [1,084] ms
+15-May-2026 16:10:53.508 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:10:53.609 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [101] ms
+15-May-2026 16:10:53.610 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:10:53.713 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [103] ms
+15-May-2026 16:10:53.716 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:10:53.791 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [76] ms
+15-May-2026 16:10:53.809 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:10:54.008 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [6067] milliseconds
+15-May-2026 16:11:15.563 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:11:15.753 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:11:15.813 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:11:15.835 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:11:43.544 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:11:43.553 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:11:43.554 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:11:43.555 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:11:43.555 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:11:43.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:11:43.556 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:11:43.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:11:43.557 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:11:43.558 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:11:43.558 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:11:43.580 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:11:43.580 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:11:43.580 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:11:43.582 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:11:43.582 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:11:43.582 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:11:43.583 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:11:43.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:11:43.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:11:43.584 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:11:43.585 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:11:43.586 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:11:43.587 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:11:43.592 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:11:43.604 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:11:44.139 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:11:44.205 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1043] milliseconds
+15-May-2026 16:11:44.310 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:11:44.311 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:11:44.388 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:11:47.843 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:11:48.066 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [159] milliseconds.
+15-May-2026 16:11:48.246 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [3,859] ms
+15-May-2026 16:11:48.249 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:11:48.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [128] ms
+15-May-2026 16:11:48.379 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:11:49.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [1,178] ms
+15-May-2026 16:11:49.559 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:11:49.779 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [221] ms
+15-May-2026 16:11:49.781 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:11:49.903 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [122] ms
+15-May-2026 16:11:49.907 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:11:49.984 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [80] ms
+15-May-2026 16:11:49.998 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:11:50.204 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5997] milliseconds
+15-May-2026 16:12:53.270 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:12:53.452 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:12:53.514 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:12:53.532 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:13:20.350 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:13:20.368 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:13:20.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:13:20.370 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:13:20.372 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:13:20.372 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:13:20.372 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:13:20.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:13:20.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:13:20.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:13:20.376 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:13:20.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:13:20.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:13:20.399 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:13:20.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:13:20.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:13:20.402 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:13:20.404 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:13:20.434 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:13:20.446 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:13:20.955 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:13:21.027 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1054] milliseconds
+15-May-2026 16:13:21.135 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:13:21.136 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:13:21.196 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:13:24.731 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:13:24.992 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [188] milliseconds.
+15-May-2026 16:13:25.091 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [3,895] ms
+15-May-2026 16:13:25.094 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:13:25.190 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [95] ms
+15-May-2026 16:13:25.191 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:13:26.376 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [1,185] ms
+15-May-2026 16:13:26.378 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:13:26.502 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [123] ms
+15-May-2026 16:13:26.503 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:13:26.621 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [117] ms
+15-May-2026 16:13:26.623 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:13:26.710 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [87] ms
+15-May-2026 16:13:26.724 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:13:26.893 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5865] milliseconds
+15-May-2026 16:14:11.935 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:14:12.125 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:14:12.188 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:14:12.206 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:14:40.629 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:14:40.640 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:14:40.641 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:14:40.641 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:14:40.642 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:14:40.642 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:14:40.643 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:14:40.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:14:40.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:14:40.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:14:40.645 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:14:40.665 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:14:40.666 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:14:40.667 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:14:40.667 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:14:40.667 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:14:40.668 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:14:40.668 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:14:40.668 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:14:40.669 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:14:40.669 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:14:40.669 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:14:40.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:14:40.670 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:14:40.676 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:14:40.686 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:14:41.156 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:14:41.228 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1052] milliseconds
+15-May-2026 16:14:41.324 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:14:41.325 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:14:41.394 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:14:44.597 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:14:44.757 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [120] milliseconds.
+15-May-2026 16:14:44.808 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [3,415] ms
+15-May-2026 16:14:44.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:14:44.895 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [83] ms
+15-May-2026 16:14:44.896 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:14:45.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [1,049] ms
+15-May-2026 16:14:45.946 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:14:46.044 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [98] ms
+15-May-2026 16:14:46.046 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:14:46.133 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [88] ms
+15-May-2026 16:14:46.135 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:14:46.209 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [75] ms
+15-May-2026 16:14:46.223 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:14:46.410 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [5181] milliseconds
+15-May-2026 16:15:26.653 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:15:26.817 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:15:26.879 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:15:26.897 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:16:16.973 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.22
+15-May-2026 16:16:16.986 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 1 2026 18:29:05 UTC
+15-May-2026 16:16:16.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.22.0
+15-May-2026 16:16:16.987 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+15-May-2026 16:16:16.988 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+15-May-2026 16:16:16.989 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+15-May-2026 16:16:16.990 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-17.0.6
+15-May-2026 16:16:16.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.6+9-LTS-190
+15-May-2026 16:16:16.991 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+15-May-2026 16:16:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:16:16.992 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:16:17.016 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\conf\logging.properties
+15-May-2026 16:16:17.017 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+15-May-2026 16:16:17.018 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+15-May-2026 16:16:17.018 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+15-May-2026 16:16:17.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+15-May-2026 16:16:17.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+15-May-2026 16:16:17.019 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+15-May-2026 16:16:17.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+15-May-2026 16:16:17.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+15-May-2026 16:16:17.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+15-May-2026 16:16:17.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:16:17.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Dell\Downloads\apache-tomcat-11.0.22
+15-May-2026 16:16:17.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Dell\Downloads\apache-tomcat-11.0.22\temp
+15-May-2026 16:16:17.031 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.14] using APR version [1.7.6].
+15-May-2026 16:16:17.045 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.5.5 27 Jan 2026]
+15-May-2026 16:16:17.595 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:16:17.657 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1105] milliseconds
+15-May-2026 16:16:17.762 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+15-May-2026 16:16:17.763 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.22]
+15-May-2026 16:16:17.830 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war]
+15-May-2026 16:16:22.043 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+15-May-2026 16:16:22.244 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [144] milliseconds.
+15-May-2026 16:16:22.306 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ORSV0.war] has finished in [4,477] ms
+15-May-2026 16:16:22.309 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs]
+15-May-2026 16:16:22.424 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\docs] has finished in [116] ms
+15-May-2026 16:16:22.426 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples]
+15-May-2026 16:16:24.950 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\examples] has finished in [2,523] ms
+15-May-2026 16:16:24.956 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager]
+15-May-2026 16:16:25.326 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\host-manager] has finished in [368] ms
+15-May-2026 16:16:25.334 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager]
+15-May-2026 16:16:25.758 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\manager] has finished in [424] ms
+15-May-2026 16:16:25.762 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT]
+15-May-2026 16:16:26.007 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Dell\Downloads\apache-tomcat-11.0.22\webapps\ROOT] has finished in [246] ms
+15-May-2026 16:16:26.045 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:16:26.660 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [8996] milliseconds
+15-May-2026 16:40:50.299 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:40:50.366 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+15-May-2026 16:40:50.403 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [ORSV0] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+15-May-2026 16:40:50.404 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ORSV0] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Object.wait(Native Method)
+ java.base@17.0.6/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.6/java.util.TimerThread.run(Timer.java:516)
+15-May-2026 16:40:50.405 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ORSV0] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534)
+15-May-2026 16:40:50.406 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ORSV0] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534)
+15-May-2026 16:40:50.406 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ORSV0] appears to have started a thread named [com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread-#2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Object.wait(Native Method)
+ com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:534)
+15-May-2026 16:40:50.407 WARNING [Thread-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ORSV0] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/java.lang.Object.wait(Native Method)
+ java.base@17.0.6/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:91)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.6/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+15-May-2026 16:40:50.415 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:40:50.427 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+15-May-2026 16:40:50.475 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1244)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:854)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+15-May-2026 16:40:50.476 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1244)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:854)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:123)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:90)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:833)

@@ -1,0 +1,1548 @@
+13-May-2026 11:58:04.201 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 11:58:04.201 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 11:58:04.217 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@33f2cfda')
+13-May-2026 12:04:57.429 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.LoginCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in getting User by emailId
+		at com.sunilos.p4.model.BaseModel.findByUniqueColumn(BaseModel.java:126)
+		at com.sunilos.p4.model.UserModel.findByLogin(UserModel.java:107)
+		at com.sunilos.p4.model.UserModel.authenticate(UserModel.java:177)
+		at com.sunilos.p4.ctl.LoginCtl.doPost(LoginCtl.java:111)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:04:57.487 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:04:57.487 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 12:09:51.284 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 12:09:51.284 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 12:09:51.286 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@115dcaea')
+13-May-2026 12:09:51.546 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 12:09:51.547 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 12:10:02.222 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 12:10:02.222 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 12:10:10.895 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 12:10:10.895 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 12:10:10.898 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6cae2e4d')
+13-May-2026 12:11:11.339 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:11.430 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:11.431 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 12:11:14.880 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:14.880 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:93)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:47)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:147)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:14.880 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:167)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		... 23 more
+	Caused by: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:93)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:47)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:147)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		... 24 more
+13-May-2026 12:11:32.553 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:32.602 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:11:32.602 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 12:12:46.976 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.UserCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception in updating User 
+		at com.sunilos.p4.model.UserModel.update(UserModel.java:162)
+		at com.sunilos.p4.model.UserModel.update(UserModel.java:30)
+		at com.sunilos.p4.ctl.BaseCtl.doPost(BaseCtl.java:211)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:12:47.017 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 12:12:47.017 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 14:03:53.071 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 14:03:53.072 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 14:03:53.077 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@270a620')
+13-May-2026 14:05:39.799 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 14:05:39.872 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 14:05:39.873 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 14:05:42.494 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 14:05:42.496 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:93)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:47)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:147)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 14:05:42.496 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:167)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		... 23 more
+	Caused by: java.lang.ClassNotFoundException: org.apache.jsp.jsp.Error_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:93)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:47)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:147)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		... 24 more
+13-May-2026 15:28:43.719 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 15:28:43.719 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:04:27.289 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:04:27.289 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:04:27.294 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6042d663')
+13-May-2026 19:04:31.396 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:04:31.396 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:24:56.327 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:24:56.328 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:24:56.344 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@738d37fc')
+13-May-2026 19:25:48.856 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:25:50.304 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:25:50.304 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 19:30:58.416 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:30:58.417 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:31:25.448 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:31:25.450 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:31:25.458 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1fecfaea')
+13-May-2026 19:31:37.837 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:31:37.948 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:31:37.948 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 19:34:43.067 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:34:43.067 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:34:56.318 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:34:56.319 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:34:56.324 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@33f2cfda')
+13-May-2026 19:35:08.589 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.StudentListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:35:08.679 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:35:08.679 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 19:36:21.987 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:36:21.987 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:36:39.533 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:36:39.533 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:36:39.538 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@322e49ee')
+13-May-2026 19:48:32.827 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:48:32.827 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:51:17.000 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:51:17.000 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:51:17.004 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@33f2cfda')
+13-May-2026 19:52:20.881 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:52:20.881 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 19:54:26.023 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 19:54:26.024 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 19:54:26.028 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@33f2cfda')
+13-May-2026 19:55:23.211 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [com.sunilos.p4.ctl.FacultyListCtl] in context with path [/ORSV0] threw exception
+	com.sunilos.p4.exception.ApplicationException: Exception : Exception in search Student
+		at com.sunilos.p4.model.BaseModel.search(BaseModel.java:267)
+		at com.sunilos.p4.ctl.BaseListCtl.doPost(BaseListCtl.java:111)
+		at com.sunilos.p4.ctl.BaseListCtl.doGet(BaseListCtl.java:41)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:622)
+		at com.sunilos.p4.ctl.BaseCtl.service(BaseCtl.java:161)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.PerformanceMonitorFilter.doFilter(PerformanceMonitorFilter.java:42)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.LanguageFilter.doFilter(LanguageFilter.java:48)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at com.sunilos.p4.ctl.FrontController.doFilter(FrontController.java:50)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:55:23.285 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+13-May-2026 19:55:23.285 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardHostValve.custom Exception Processing [ErrorPage[exceptionType=com.sunilos.p4.exception.ApplicationException, location=/jsp/Error.jsp]]
+	org.apache.jasper.JasperException: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:547)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:394)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:330)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:281)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:513)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:335)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:262)
+		at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:375)
+		at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:262)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:147)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:782)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+	Caused by: org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [22] in the jsp file: [/jsp/Error.jsp]
+The method exceptionToString(Exception) in the type DataUtility is not applicable for the arguments (Throwable)
+19:       <% if(exception != null) { %>
+20:       <div class="mb-3">
+21:         <h6 class="fw-semibold text-danger"><i class="bi bi-bug-fill me-2"></i>Error Details</h6>
+22:         <pre class="bg-light rounded p-3 small text-danger" style="max-height:300px;overflow:auto;"><%=DataUtility.exceptionToString(exception)%></pre>
+23:       </div>
+24:       <% } %>
+25:       <button class="btn btn-primary" onclick="history.back()">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:539)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:368)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:340)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:326)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:585)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		... 23 more
+13-May-2026 19:55:51.966 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-May-2026 19:55:51.966 INFO [Thread-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-May-2026 20:26:39.192 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-May-2026 20:26:39.194 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-May-2026 20:26:39.206 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5974b233')
