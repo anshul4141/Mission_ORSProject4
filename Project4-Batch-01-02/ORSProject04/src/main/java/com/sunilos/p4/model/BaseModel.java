@@ -35,6 +35,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			}
 			rs.close();
 		} catch (SQLException e) {
+			e.printStackTrace();
 			throw new DatabaseException("Exception : Exception in getting PK");
 		} finally {
 			// conn.close();
@@ -62,6 +63,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			pstmt.close();
 
 		} catch (SQLException e) {
+			e.printStackTrace();
 			JDBCDataSource.rollBack(conn);
 		} finally {
 			JDBCDataSource.closeConnection(conn);
@@ -87,6 +89,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			}
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ApplicationException("Exception : Exception in getting User by pk");
 		} finally {
 			JDBCDataSource.closeConnection(conn);
@@ -114,6 +117,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			}
 
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ApplicationException("Exception : Exception in getting User by pk");
 		} finally {
 			JDBCDataSource.closeConnection(conn);
