@@ -31,7 +31,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="mainNav">
+		<div class="collapse navbar-collapse" id="mainNav"
+			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 
 			<!-- ===== Left nav — grouped dropdowns (logged-in only) ===== -->
 			<%
@@ -153,8 +154,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						class="bi bi-people me-1"></i> People
 				</a>
 					<ul
-						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
-						style="min-width: 210px; background: #1a2e4a;">
+						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3 overflow-auto"
+						style="min-width: 210px; max-height: 400px; background: #1a2e4a;">
 
 						<!-- Students -->
 						<li>

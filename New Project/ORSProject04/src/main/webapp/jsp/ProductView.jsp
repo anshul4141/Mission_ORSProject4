@@ -1,3 +1,4 @@
+<%@page import="com.sunilos.p4.util.MessageSource"%>
 <%@page import="com.sunilos.p4.ctl.SubjectCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
@@ -12,6 +13,8 @@
 <%
 String _suc = ServletUtility.getSuccessMessage(request);
 String _err = ServletUtility.getErrorMessage(request);
+
+MessageSource m = MessageSource.getInstance();
 %>
 
 <div class="container py-4" style="max-width: 580px;">
@@ -21,7 +24,7 @@ String _err = ServletUtility.getErrorMessage(request);
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 			<h5 class="mb-0 fw-bold">
 				<i class="bi bi-bookmark-star-fill me-2"></i>
-				<%=bean.getId() > 0 ? "Edit Product" : "Add Product"%>
+				<%=bean.getId() > 0 ? "Edit Product" : m.get("product.title")%>
 			</h5>
 		</div>
 

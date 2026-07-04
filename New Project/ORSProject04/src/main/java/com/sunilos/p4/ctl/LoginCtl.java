@@ -44,8 +44,6 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 
 		log.debug("LoginCtl Method validate Started");
 
-		MessageSource ms = getMessageSource(request);
-
 		boolean pass = true;
 
 		String login = request.getParameter("login");
