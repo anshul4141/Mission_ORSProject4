@@ -13,7 +13,7 @@ boolean isStudent = loggedIn && userBean.getRoleId() == RoleBean.STUDENT;
 String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttribute("role") + ")" : "Guest";
 %>
 
-<nav class="navbar navbar-expand-lg py-0"
+<nav class="navbar navbar-expand-lg navbar-dark py-0"
 	style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%); min-height: 58px;">
 	<div class="container-fluid px-4">
 
@@ -31,8 +31,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
-		<div class="collapse navbar-collapse" id="mainNav"
-			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
+		<div class="collapse navbar-collapse" id="mainNav">
 
 			<!-- ===== Left nav — grouped dropdowns (logged-in only) ===== -->
 			<%
@@ -43,7 +42,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<!-- ---- Marksheet ---- -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
-					data-bs-toggle="dropdown"> <i
+					data-bs-toggle="dropdown" aria-expanded="false"> <i
 						class="bi bi-file-earmark-text me-1"></i> Marksheet
 				</a>
 					<ul
@@ -93,8 +92,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				%>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
-					data-bs-toggle="dropdown"> <i class="bi bi-mortarboard me-1"></i>
-						Academics
+					data-bs-toggle="dropdown" aria-expanded="false"> <i
+						class="bi bi-mortarboard me-1"></i> Academics
 				</a>
 					<ul
 						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
@@ -154,8 +153,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						class="bi bi-people me-1"></i> People
 				</a>
 					<ul
-						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3 overflow-auto"
-						style="min-width: 210px; max-height: 400px; background: #1a2e4a;">
+						class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3"
+						style="min-width: 210px; background: #1a2e4a;">
 
 						<!-- Students -->
 						<li>
@@ -219,24 +218,6 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.ROLE_LIST_CTL%>"> <i
 								class="bi bi-shield-fill-check me-2 text-primary"></i> Role List
 						</a></li>
-
-						<li><hr class="dropdown-divider border-secondary"></li>
-
-						<!-- Product -->
-						<li>
-							<h6 class="dropdown-header text-uppercase text-info small">
-								<i class="bi bi-person-gear me-1"></i> Product
-							</h6>
-						</li>
-						<li><a class="dropdown-item" href="<%=ORSView.PRODUCT_CTL%>">
-								<i class="bi bi-person-plus me-2 text-success"></i> Add Product
-						</a></li>
-						<li><a class="dropdown-item"
-							href="<%=ORSView.PRODUCT_LIST_CTL%>"> <i
-								class="bi bi-person-lines-fill me-2 text-primary"></i> Product
-								List
-						</a></li>
-
 					</ul></li>
 
 				<!-- ---- Reports (Admin only) ---- -->
@@ -349,6 +330,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<!-- Home -->
 				<li class="nav-item"><a class="nav-link px-2"
 					href="<%=ORSView.WELCOME_CTL%>"> <i class="bi bi-house-fill"></i>
+						<span class="d-lg-none ms-1">Home</span>
 				</a></li>
 
 				<!-- My Account dropdown (logged-in) -->
@@ -357,11 +339,11 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				%>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle d-flex align-items-center gap-1 px-2"
-					href="#" data-bs-toggle="dropdown" aria-expanded="false"> <span
-						class="rounded-circle bg-white text-primary d-flex align-items-center justify-content-center fw-bold"
-						style="width: 28px; height: 28px; font-size: 0.75rem; flex-shrink: 0;">
-							<%=userBean.getFirstName().substring(0, 1).toUpperCase()%>
-					</span> <span class="d-none d-lg-inline small"><%=userBean.getFirstName()%></span>
+					href="#" data-bs-toggle="dropdown" aria-expanded="false"> <img
+						src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=userBean.getId()%>"
+						alt="User Photo" class="rounded-circle border" width="28"
+						height="28" style="object-fit: cover; flex-shrink: 0;"> <span
+						class="d-none d-lg-inline small"><%=userBean.getFirstName()%></span>
 				</a>
 					<ul
 						class="dropdown-menu dropdown-menu-dark dropdown-menu-end shadow border-0 rounded-3"
