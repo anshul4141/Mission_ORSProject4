@@ -61,6 +61,9 @@ public class RoleModel extends BaseModel<RoleBean> {
 
 		RoleBean existBean = findByName(bean.getName());
 
+		System.out.println("existBean id: " + existBean.getId());
+		System.out.println("bean id: " + bean.getId());
+
 		if (existBean != null && bean.getId() != existBean.getId()) {
 			throw new DuplicateRecordException("role name already exist");
 		}

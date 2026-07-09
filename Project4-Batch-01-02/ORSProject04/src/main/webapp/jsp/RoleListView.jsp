@@ -18,6 +18,7 @@
 	String _suc = ServletUtility.getSuccessMessage(request);
 	String _err = ServletUtility.getErrorMessage(request);
 	List<RoleBean> list = ServletUtility.getList(request);
+	List nextList = (List) request.getAttribute("nextList");
 	int pageNo = ServletUtility.getPageNo(request);
 	int pageSize = ServletUtility.getPageSize(request);
 
@@ -27,8 +28,9 @@
 	<div align="center">
 		<h1>Role List</h1>
 		<form action="<%=ORSView.ROLE_LIST_CTL%>" method="post">
-			<font color="green"><%=_suc != null ? _suc : ""%></font> <font
-				color="red"><%=_err != null ? _err : ""%></font>
+
+			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <font
+				color="green"><%=_suc != null ? _suc : ""%></font> <font color="red"><%=_err != null ? _err : ""%></font>
 			<table width="100%" border="1px">
 				<tr>
 					<th><input type="checkbox"
@@ -37,6 +39,7 @@
 					<th>Id</th>
 					<th>Name</th>
 					<th>Description</th>
+					<th>Action</th>
 				</tr>
 
 				<%
@@ -50,6 +53,7 @@
 					<td><%=bean.getId()%></td>
 					<td><%=bean.getName()%></td>
 					<td><%=bean.getDescription()%></td>
+					<td><a href="RoleCtl?id=<%=bean.getId()%>">Edit</a></td>
 				</tr>
 
 				<%
@@ -60,7 +64,12 @@
 			<table>
 				<tr>
 					<td><input type="submit" name="operation"
-						value="<%=BaseCtl.OP_DELETE%>"></td>
+						<%=pageNo == 1 ? "disabled" : ""%>
+						value="<%=BaseCtl.OP_PREVIOUS%>"> <input type="submit"
+						name="operation" value="<%=BaseCtl.OP_DELETE%>"> <input
+						type="submit" name="operation"
+						<%=nextList.size() == 0 ? "disabled" : ""%>
+						value="<%=BaseCtl.OP_NEXT%>"></td>
 				</tr>
 			</table>
 

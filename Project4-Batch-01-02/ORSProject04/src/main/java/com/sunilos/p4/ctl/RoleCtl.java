@@ -2,6 +2,7 @@ package com.sunilos.p4.ctl;
 
 import com.sunilos.p4.bean.RoleBean;
 import com.sunilos.p4.model.RoleModel;
+import com.sunilos.p4.util.DataUtility;
 import com.sunilos.p4.util.DataValidator;
 
 import jakarta.servlet.annotation.WebServlet;
@@ -35,7 +36,8 @@ public class RoleCtl extends BaseCtl<RoleBean, RoleModel> {
 
 		bean.setName(request.getParameter("name"));
 		bean.setDescription(request.getParameter("description"));
-		
+		bean.setId(DataUtility.getLong(request.getParameter("id")));
+
 		populateDTO(bean, request);
 
 		return bean;

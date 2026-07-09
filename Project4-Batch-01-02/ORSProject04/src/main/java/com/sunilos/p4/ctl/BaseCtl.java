@@ -148,6 +148,8 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 
 		long id = DataUtility.getLong(request.getParameter("id"));
 
+		System.out.println("id ============> " + id);
+
 		B bean = populateBean(request);
 
 		// If primary key does exist then update the record of save the record
