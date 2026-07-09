@@ -12,6 +12,12 @@ $(document).ready(function() {
 		maxDate: new Date(maxYear, 11, 31)
 	});
 
+	// Calendar image par click karne se datepicker open hoga
+	$("#calendarBtn").click(function(e) {
+		e.preventDefault();
+		$("#udate").datepicker("show");
+	});
+
 });
 
 $(function() {
