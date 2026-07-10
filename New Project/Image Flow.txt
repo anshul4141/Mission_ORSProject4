@@ -1,0 +1,58 @@
+Note: Image Upload karne ke liye humne Multipart Form ka use kiya hai.
+
+@MultipartConfig:
+
+Servlet ko multipart/form-data (Multimedia jaise image ya video) request handle karne ki permission deta hai, jisse hum request.getPart("param-name") ka use karke uploaded file ko receive aur process kar sakte hain.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Image Upload Flow:
+
+1. UserView.jsp par humne File ki input field <form></form> tag ke andar banayi.
+
+2. <form></form> tag me humne teen attributes ka use kiya:
+   a. action="UploadPhotoCtl"
+   b. method="post"
+   c. enctype="multipart/form-data" (enctype = Encoding Type)
+
+3. Upload Photo ka Submit button banaya. Us par click karne par request UploadPhotoCtl par gayi. UploadPhotoCtl par humne @MultipartConfig annotation lagaya.
+
+4. Uski doPost() method me humne request.getPart("photo") method se photo ko get kiya aur PropertyReader se image folder ka path get kiya.
+
+5. Part ki getSubmittedFileName() method se photo ka original name get kiya.
+
+6. File ka object banaya aur usme folder ka path aur image ka name pass kiya:
+   new File(folder, fileName)
+
+7. InputStream aur FileOutputStream ka object banaya. InputStream ki read() method se file ko read kiya aur FileOutputStream ki write() method se image ko folder me write kiya.
+
+8. Model ki uploadPhoto() method ko call kiya aur image ke name ko table me update kiya.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Image Download (Display) Flow:
+
+1. UserView.jsp me image display karne ke liye <img> tag ka use kiya aur uske src me:
+   src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>" diya.
+
+2. Browser ne image load karne ke liye UploadPhotoCtl par GET request bheji aur user ki id query string me gayi.
+
+3. UploadPhotoCtl ki doGet() method chali. Usme request.getParameter("id") se user ki id get ki.
+
+4. UserModel ki findByPK(id) method call ki aur database se user ki photo ka naam get kiya.
+
+5. PropertyReader.getValue("photoPath") se image folder ka path get kiya.
+
+6. Agar user ki photo available hai to:
+   File ka object banaya aur image ka path pass kiya:
+   new File(basePath, bean.getPhoto())
+
+7. FileInputStream ka object banaya aur image ko read kiya.
+
+8. response.setContentType() se image ka content type set kiya aur response.getOutputStream() ka object banaya.
+
+9. FileInputStream ki read() method se image ko read kiya aur OutputStream ki write() method se browser ko bhej diya.
+
+10. Agar user ki photo available nahi hai to getServletContext().getResourceAsStream("/img/logo.png") se default logo read kiya aur response.getOutputStream() ke through browser ko bhej diya.
+
+11. Finally browser ne response ko receive kiya aur user ki image (ya default logo) display kar di.
