@@ -48,10 +48,10 @@ public class ServletUtility {
 	public static void forwardPage(String page, HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		System.out.println("Forwarding to page : " + page);
-		if (page.startsWith("/")) {
-			page = page.substring(1);
-		}
-		request.setAttribute("p", page);
+		/*
+		 * if (page.startsWith("/")) { page = page.substring(1); }
+		 * request.setAttribute("p", page);
+		 */
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);
 	}

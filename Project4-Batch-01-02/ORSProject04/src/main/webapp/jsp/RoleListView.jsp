@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 	<%
 	String _suc = ServletUtility.getSuccessMessage(request);
 	String _err = ServletUtility.getErrorMessage(request);

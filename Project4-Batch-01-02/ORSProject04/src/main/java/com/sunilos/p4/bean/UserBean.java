@@ -1,5 +1,7 @@
 package com.sunilos.p4.bean;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -147,6 +149,28 @@ public class UserBean extends BaseBean {
 
 	public void setLastLoginIP(String lastLoginIP) {
 		this.lastLoginIP = lastLoginIP;
+	}
+
+	@Override
+	public void setResultset(ResultSet rs) {
+		try {
+			super.setResultset(rs);
+			this.setFirstName(rs.getString(2));
+			this.setLastName(rs.getString(3));
+			this.setLogin(rs.getString(4));
+			this.setPassword(rs.getString(5));
+			this.setDob(rs.getDate(6));
+			this.setMobileNo(rs.getString(7));
+			this.setRoleId(rs.getLong(8));
+			this.setUnSuccessfulLogin(rs.getInt(9));
+			this.setGender(rs.getString(10));
+			this.setLastLogin(rs.getTimestamp(11));
+			this.setLock(rs.getString(12));
+			this.setRegisteredIP(rs.getString(13));
+			this.setLastLoginIP(rs.getString(14));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

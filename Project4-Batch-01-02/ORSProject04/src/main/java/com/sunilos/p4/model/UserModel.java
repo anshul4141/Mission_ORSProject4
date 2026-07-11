@@ -120,12 +120,15 @@ public class UserModel extends BaseModel<UserBean> {
 	public UserBean authenticate(String login, String password) {
 
 		UserBean bean = findByUniqueColumn("LOGIN", login);
-
+		System.out.println("bean login: " + bean.getLogin());
+		System.out.println("bean password: " + bean.getPassword());
 		if (bean != null) {
 			if (password.equals(bean.getPassword())) {
+				System.out.println("pssword is equal: " + password.equals(bean.getPassword()));
 				return bean;
 			}
 		}
+		System.out.println("pssword is equal: " + password.equals(bean.getPassword()));
 		return null;
 
 	}
