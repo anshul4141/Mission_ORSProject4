@@ -134,6 +134,7 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 		UserBean bean = populateBean(request);
 		UserModel model = getModel();
 		try {
+//			long pk =model.add(bean);)
 			long pk = model.registerUser(bean);
 			bean.setId(pk);
 			ServletUtility.setSuccessMessage("User is registred, Login now", request);
