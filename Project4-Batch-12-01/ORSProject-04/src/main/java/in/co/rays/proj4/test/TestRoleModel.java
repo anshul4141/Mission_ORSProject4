@@ -1,0 +1,13 @@
+package in.co.rays.proj4.test;
+
+public class TestRoleModel {
+
+	public static void main(String[] args) {
+		testAdd();
+	}
+
+	public static void testAdd() {
+
+	}
+
+}

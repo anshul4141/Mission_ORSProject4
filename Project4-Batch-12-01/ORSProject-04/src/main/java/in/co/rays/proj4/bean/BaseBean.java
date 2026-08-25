@@ -6,30 +6,10 @@ import java.sql.Timestamp;
 
 public abstract class BaseBean implements DropdownListBean {
 
-	/**
-	 * Non Business primary key इसमें नॉन बिज़नेस के स्टोर की जाती है
-	 */
 	protected long id;
-
-	/**
-	 * Contains USER ID who created this database record. इसमें रिकॉर्ड क्रिएट करने
-	 * वाले यूजर का ID स्टोर किया जाता है
-	 */
 	protected String createdBy;
-
-	/**
-	 * Contains USER ID who modified this database record
-	 */
 	protected String modifiedBy;
-
-	/**
-	 * Contains Created Timestamp of database record
-	 */
 	protected Timestamp createdDatetime;
-
-	/**
-	 * Contains Modified Timestamp of database record
-	 */
 	protected Timestamp modifiedDatetime;
 
 	public long getId() {
