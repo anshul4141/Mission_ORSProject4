@@ -100,12 +100,12 @@ public class UserModel extends BaseModel<UserBean> {
 
 	@Override
 	public String getTable() {
-		return null;
+		return "st_user";
 	}
 
 	@Override
 	public UserBean getBean() {
-		return null;
+		return new UserBean();
 	}
 
 }

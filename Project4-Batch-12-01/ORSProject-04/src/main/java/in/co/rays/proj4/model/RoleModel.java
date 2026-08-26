@@ -16,6 +16,12 @@ public class RoleModel extends BaseModel<RoleBean> {
 
 		Connection conn = null;
 
+		RoleBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("role name already exist");
+		}
+
 		try {
 
 			conn = JDBCDataSource.getConnection();
@@ -47,6 +53,12 @@ public class RoleModel extends BaseModel<RoleBean> {
 
 		Connection conn = null;
 
+		RoleBean existBean = findByName(bean.getName());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("role name already exist");
+		}
+
 		try {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false); // Begin transaction
@@ -71,6 +83,15 @@ public class RoleModel extends BaseModel<RoleBean> {
 			JDBCDataSource.closeConnection(conn);
 		}
 	}
+
+	public RoleBean findByName(String name) {
+
+		RoleBean bean = findByUniqueColumn("name", name);
+
+		return bean;
+
+	}
+	
 
 	@Override
 	public String getWhereClause(RoleBean bean) {

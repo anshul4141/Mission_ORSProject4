@@ -116,7 +116,7 @@ public abstract class BaseModel<T extends BaseBean> {
 		return bean;
 	}
 
-	// search record with filter(getWhereClous()) + pagination
+	// search record with filter(getWhereClause()) + pagination
 	public List<T> search(T bean, int pageNo, int pageSize) throws ApplicationException {
 
 		ArrayList<T> list = new ArrayList<T>();
@@ -151,7 +151,7 @@ public abstract class BaseModel<T extends BaseBean> {
 		return list;
 	}
 
-	// search record with pagination only, without filter(getWhereClous())
+	// search record with pagination only, without filter(getWhereClause())
 	public List<T> list(int pageNo, int pageSize) throws ApplicationException {
 
 		ArrayList<T> list = new ArrayList<T>();
