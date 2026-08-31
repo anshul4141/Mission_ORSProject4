@@ -22,6 +22,11 @@ public class CourseModel extends BaseModel<CourseBean> {
 		sql.append(" VALUES(NOW(),NOW(),'root@sunilos.com','root@sunilos.com'," + values + " )");
 
 		Connection conn = null;
+		CourseBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("course already exist");
+		}
 
 		int pk = 0;
 
@@ -56,6 +61,11 @@ public class CourseModel extends BaseModel<CourseBean> {
 		String sql = "UPDATE " + getTable() + " SET NAME=?,DESCRIPTION=?,DURATION=? WHERE ID=?";
 
 		Connection conn = null;
+		CourseBean existBean = findByName(bean.getName());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("course already exist");
+		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -76,6 +86,10 @@ public class CourseModel extends BaseModel<CourseBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+	}
+
+	public CourseBean findByName(String name) throws ApplicationException {
+		return findByUniqueColumn("NAME", name);
 	}
 
 	@Override

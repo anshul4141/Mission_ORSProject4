@@ -14,8 +14,12 @@ public class MarksheetModel extends BaseModel<MarksheetBean> {
 	public long add(MarksheetBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
-
 		int pk = 0;
+		MarksheetBean existBean = findByRollNo(bean.getRollNo());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("marksheet already exist");
+		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -55,6 +59,11 @@ public class MarksheetModel extends BaseModel<MarksheetBean> {
 	public void update(MarksheetBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
+		MarksheetBean existBean = findByRollNo(bean.getRollNo());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("marksheet already exist");
+		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -87,6 +96,11 @@ public class MarksheetModel extends BaseModel<MarksheetBean> {
 			JDBCDataSource.closeConnection(conn);
 		}
 
+	}
+
+	public MarksheetBean findByRollNo(String rollNo) throws ApplicationException {
+		MarksheetBean bean = findByUniqueColumn("ROLL_NO", rollNo);
+		return bean;
 	}
 
 	@Override

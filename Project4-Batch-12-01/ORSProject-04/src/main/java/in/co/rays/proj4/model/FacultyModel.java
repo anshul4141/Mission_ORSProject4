@@ -13,8 +13,14 @@ public class FacultyModel extends BaseModel<FacultyBean> {
 	@Override
 	public long add(FacultyBean bean) throws ApplicationException, DuplicateRecordException {
 
-		Connection conn = null;
 		int pk = 0;
+
+		Connection conn = null;
+		FacultyBean existBean = findByEmail(bean.getEmail());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("faculty already exist");
+		}
 		try {
 			pk = nextPK();
 			conn = JDBCDataSource.getConnection();
@@ -50,6 +56,11 @@ public class FacultyModel extends BaseModel<FacultyBean> {
 	public void update(FacultyBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
+		FacultyBean existBean = findByEmail(bean.getEmail());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("faculty already exist");
+		}
 		try {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false);
@@ -74,6 +85,11 @@ public class FacultyModel extends BaseModel<FacultyBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+	}
+
+	public FacultyBean findByEmail(String email) throws ApplicationException {
+		FacultyBean bean = findByUniqueColumn("EMAIL", email);
+		return bean;
 	}
 
 	@Override

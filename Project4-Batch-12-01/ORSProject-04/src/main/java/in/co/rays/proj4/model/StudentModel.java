@@ -24,8 +24,13 @@ public class StudentModel extends BaseModel<StudentBean> {
 		System.out.println(sql);
 
 		Connection conn = null;
-
 		int pk = 0;
+
+		StudentBean existBean = findByEmailId(bean.getEmail());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("student already exist");
+		}
 
 		try {
 
@@ -71,6 +76,11 @@ public class StudentModel extends BaseModel<StudentBean> {
 				"UPDATE ST_STUDENT SET COLLEGE_ID=?,COLLEGE_NAME=?,FIRST_NAME=?,LAST_NAME=?,DATE_OF_BIRTH=?,MOBILE_NO=?,EMAIL=? WHERE ID=?");
 
 		Connection conn = null;
+		StudentBean existBean = findByEmailId(bean.getEmail());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("student already exist");
+		}
 
 		try {
 
@@ -94,6 +104,11 @@ public class StudentModel extends BaseModel<StudentBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+	}
+
+	public StudentBean findByEmailId(String email) throws ApplicationException {
+		StudentBean bean = findByUniqueColumn("EMAIL", email);
+		return bean;
 	}
 
 	@Override

@@ -15,6 +15,12 @@ public class CollegeModel extends BaseModel<CollegeBean> {
 		Connection conn = null;
 		int pk = 0;
 
+		CollegeBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("college already exist");
+		}
+
 		try {
 			conn = JDBCDataSource.getConnection();
 			pk = nextPK();
@@ -49,8 +55,13 @@ public class CollegeModel extends BaseModel<CollegeBean> {
 
 	@Override
 	public void update(CollegeBean bean) throws ApplicationException, DuplicateRecordException {
-		Connection conn = null;
 
+		Connection conn = null;
+		CollegeBean existBean = findByName(bean.getName());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("college already exist");
+		}
 		try {
 
 			conn = JDBCDataSource.getConnection();
@@ -81,7 +92,12 @@ public class CollegeModel extends BaseModel<CollegeBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
-		}
+	}
+
+	public CollegeBean findByName(String name) throws ApplicationException {
+		CollegeBean bean = findByUniqueColumn("NAME", name);
+		return bean;
+	}
 
 	@Override
 	public String getTable() {

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.bean.SubjectBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DuplicateRecordException;
@@ -22,8 +23,12 @@ public class SubjectModel extends BaseModel<SubjectBean> {
 		sql.append(" VALUES(NOW(),NOW(),'root@sunilos.com','root@sunilos.com'," + values + " )");
 
 		Connection conn = null;
-
 		int pk = 0;
+		SubjectBean existBean = findByName(bean.getName());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("subject already exist");
+		}
 
 		try {
 
@@ -55,6 +60,11 @@ public class SubjectModel extends BaseModel<SubjectBean> {
 
 		String sql = "UPDATE " + getTable() + " SET NAME=?,DESCRIPTION=?,COURSE_ID=? WHERE ID=?";
 		Connection conn = null;
+		SubjectBean existBean = findByName(bean.getName());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("subject already exist");
+		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -74,6 +84,11 @@ public class SubjectModel extends BaseModel<SubjectBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+	}
+
+	public SubjectBean findByName(String name) throws ApplicationException {
+		SubjectBean bean = findByUniqueColumn("NAME", name);
+		return bean;
 	}
 
 	@Override
