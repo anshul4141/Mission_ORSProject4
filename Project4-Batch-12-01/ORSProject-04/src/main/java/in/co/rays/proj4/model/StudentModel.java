@@ -3,6 +3,7 @@ package in.co.rays.proj4.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import in.co.rays.proj4.bean.CollegeBean;
 import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
@@ -30,6 +31,12 @@ public class StudentModel extends BaseModel<StudentBean> {
 
 		if (existBean != null) {
 			throw new DuplicateRecordException("student already exist");
+		}
+
+		CollegeModel cmodel = new CollegeModel();
+		CollegeBean cbean = cmodel.findByPK(bean.getCollegeId());
+		if (cbean != null) {
+			bean.setCollegeName(cbean.getName());
 		}
 
 		try {
@@ -80,6 +87,12 @@ public class StudentModel extends BaseModel<StudentBean> {
 
 		if (existBean != null && existBean.getId() != bean.getId()) {
 			throw new DuplicateRecordException("student already exist");
+		}
+
+		CollegeModel cmodel = new CollegeModel();
+		CollegeBean cbean = cmodel.findByPK(bean.getCollegeId());
+		if (cbean != null) {
+			bean.setCollegeName(cbean.getName());
 		}
 
 		try {

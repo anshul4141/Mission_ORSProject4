@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import in.co.rays.proj4.bean.MarksheetBean;
+import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
@@ -20,6 +21,10 @@ public class MarksheetModel extends BaseModel<MarksheetBean> {
 		if (existBean != null) {
 			throw new DuplicateRecordException("marksheet already exist");
 		}
+
+		StudentModel smodel = new StudentModel();
+		StudentBean sbean = smodel.findByPK(bean.getStudentId());
+		bean.setName(sbean.getFirstName() + " " + sbean.getLastName());
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -64,6 +69,10 @@ public class MarksheetModel extends BaseModel<MarksheetBean> {
 		if (existBean != null && existBean.getId() != bean.getId()) {
 			throw new DuplicateRecordException("marksheet already exist");
 		}
+
+		StudentModel smodel = new StudentModel();
+		StudentBean sbean = smodel.findByPK(bean.getStudentId());
+		bean.setName(sbean.getFirstName() + " " + sbean.getLastName());
 
 		try {
 			conn = JDBCDataSource.getConnection();
