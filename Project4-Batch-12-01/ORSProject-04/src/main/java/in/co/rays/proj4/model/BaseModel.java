@@ -130,7 +130,7 @@ public abstract class BaseModel<T extends BaseBean> {
 			pageNo = (pageNo - 1) * pageSize; // <==== index formula
 			sql.append(" Limit " + pageNo + ", " + pageSize);
 		}
-
+		System.out.println("sql===> " + sql.toString());
 		try {
 			conn = JDBCDataSource.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
