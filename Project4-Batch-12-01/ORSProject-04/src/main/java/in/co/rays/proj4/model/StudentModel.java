@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import in.co.rays.proj4.bean.CollegeBean;
 import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
-import in.co.rays.proj4.exception.DatabaseException;
 import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
@@ -35,9 +34,7 @@ public class StudentModel extends BaseModel<StudentBean> {
 
 		CollegeModel cmodel = new CollegeModel();
 		CollegeBean cbean = cmodel.findByPK(bean.getCollegeId());
-		if (cbean != null) {
-			bean.setCollegeName(cbean.getName());
-		}
+		bean.setCollegeName(cbean.getName());
 
 		try {
 
@@ -69,13 +66,6 @@ public class StudentModel extends BaseModel<StudentBean> {
 		return pk;
 	}
 
-	/**
-	 * Update a Student
-	 * 
-	 * @param bean
-	 * @throws DatabaseException
-	 */
-
 	@Override
 	public void update(StudentBean bean) throws ApplicationException, DuplicateRecordException {
 
@@ -91,9 +81,7 @@ public class StudentModel extends BaseModel<StudentBean> {
 
 		CollegeModel cmodel = new CollegeModel();
 		CollegeBean cbean = cmodel.findByPK(bean.getCollegeId());
-		if (cbean != null) {
-			bean.setCollegeName(cbean.getName());
-		}
+		bean.setCollegeName(cbean.getName());
 
 		try {
 
