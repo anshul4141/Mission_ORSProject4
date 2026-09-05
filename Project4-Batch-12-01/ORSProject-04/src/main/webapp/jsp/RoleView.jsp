@@ -1,8 +1,6 @@
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@page import="in.co.rays.proj4.controller.BaseCtl"%>
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 	<%
 	String _suc = ServletUtility.getSuccessMessage(request);
 	String _err = ServletUtility.getErrorMessage(request);
@@ -52,5 +50,6 @@
 		</div>
 
 	</form>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>

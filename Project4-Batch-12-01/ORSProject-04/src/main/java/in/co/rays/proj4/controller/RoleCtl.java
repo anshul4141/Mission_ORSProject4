@@ -3,6 +3,7 @@ package in.co.rays.proj4.controller;
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.model.RoleModel;
 import in.co.rays.proj4.util.DataUtility;
+import in.co.rays.proj4.util.DataValidator;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -13,12 +14,12 @@ public class RoleCtl extends BaseCtl<RoleBean, RoleModel> {
 	protected boolean validate(HttpServletRequest request) {
 		boolean pass = true;
 
-		if (request.getParameter("name").equals("")) {
+		if (DataValidator.isNull(request.getParameter("name"))) {
 			request.setAttribute("name", "role name is require");
 			pass = false;
 		}
 
-		if (request.getParameter("description").equals("")) {
+		if (DataValidator.isNull(request.getParameter("description"))) {
 			request.setAttribute("description", "description is require");
 			pass = false;
 		}

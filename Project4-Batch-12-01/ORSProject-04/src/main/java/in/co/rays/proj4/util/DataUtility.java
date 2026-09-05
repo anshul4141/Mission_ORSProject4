@@ -1,20 +1,16 @@
 package in.co.rays.proj4.util;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// DataUtility class format data into correct format or into another format
 public class DataUtility {
 
 	public static final String APP_DATE_FORMAT = "yyyy-MM-dd";
 	public static final String APP_TIME_FORMAT = "MM/dd/yyyy HH:mm:ss";
-	private static final DateTimeFormatter DATE_FMT = DateTimeFormatter.ofPattern(APP_DATE_FORMAT);
-	private static final DateTimeFormatter TIME_FMT = DateTimeFormatter.ofPattern(APP_TIME_FORMAT);
+	private static final SimpleDateFormat formatter = new SimpleDateFormat(APP_DATE_FORMAT);
+	private static final SimpleDateFormat timeFormatter = new SimpleDateFormat(APP_TIME_FORMAT);
 
 	public static String getString(String val) {
 		if (DataValidator.isNotNull(val)) {
@@ -49,57 +45,61 @@ public class DataUtility {
 	}
 
 	public static Date getDate(String val) {
+		Date date = null;
 		try {
-			LocalDate ld = LocalDate.parse(val, DATE_FMT);
-			return Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			date = formatter.parse(val);
 		} catch (Exception e) {
-			return null;
+
 		}
+		return date;
 	}
 
 	public static String getDateString(Date date) {
-		if (date == null)
-			return "";
 		try {
-			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(APP_DATE_FORMAT);
-			return sdf.format(date);
+			return formatter.format(date);
 		} catch (Exception e) {
-			try {
-				LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-				return DATE_FMT.format(ld);
-			} catch (Exception ex) {
-				return "";
-			}
 		}
+		return "";
 	}
 
 	public static Timestamp getTimestamp(String val) {
+
+		Timestamp timeStamp = null;
 		try {
-			LocalDateTime ldt = LocalDateTime.parse(val, TIME_FMT);
-			return Timestamp.valueOf(ldt);
+			timeStamp = new Timestamp((timeFormatter.parse(val)).getTime());
 		} catch (Exception e) {
 			return null;
 		}
+		return timeStamp;
 	}
 
 	public static Timestamp getTimestamp(long l) {
-		return new Timestamp(l);
+
+		Timestamp timeStamp = null;
+		try {
+			timeStamp = new Timestamp(l);
+		} catch (Exception e) {
+			return null;
+		}
+		return timeStamp;
 	}
 
 	public static Timestamp getCurrentTimestamp() {
-		return new Timestamp(System.currentTimeMillis());
+		Timestamp timeStamp = null;
+		try {
+			timeStamp = new Timestamp(new Date().getTime());
+		} catch (Exception e) {
+		}
+		return timeStamp;
+
 	}
 
 	public static long getTimestamp(Timestamp tm) {
-		if (tm == null)
+		try {
+			return tm.getTime();
+		} catch (Exception e) {
 			return 0;
-		return tm.getTime();
-	}
-
-	public static String exceptionToString(Exception e) {
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		e.printStackTrace(new PrintStream(baos));
-		return baos.toString();
+		}
 	}
 
 }

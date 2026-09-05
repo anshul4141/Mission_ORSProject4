@@ -3,8 +3,6 @@ package in.co.rays.proj4.util;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.controller.BaseCtl;
 import in.co.rays.proj4.controller.ORSView;
@@ -14,8 +12,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class ServletUtility {
-
-	private static Logger log = Logger.getLogger(ServletUtility.class);
 
 	public static void forward(String page, HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {

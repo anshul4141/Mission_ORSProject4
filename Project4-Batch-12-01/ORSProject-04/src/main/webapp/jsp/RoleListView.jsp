@@ -4,8 +4,6 @@
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%@ include file="Header.jsp"%>
 	<%
 	int pageNo = ServletUtility.getPageNo(request);
 	int pageSize = ServletUtility.getPageSize(request);
@@ -32,8 +30,8 @@
 			<h3 style="color: green"><%=_suc != null ? _suc : ""%></h3>
 			<h3 style="color: red"><%=_err != null ? _err : ""%></h3>
 
-			<input type="hidden" name="pageNo" value="<%=pageNo%>"> 
-			<input type="hidden" name="pageSize" value="<%=pageSize%>">
+			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
+				type="hidden" name="pageSize" value="<%=pageSize%>">
 
 			<table>
 				<tr>
@@ -85,5 +83,6 @@
 			</tr>
 		</table>
 	</form>
+	<%@ include file="Footer.jsp"%>
 </body>
 </html>
