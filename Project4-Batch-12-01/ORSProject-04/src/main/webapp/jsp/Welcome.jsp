@@ -9,7 +9,8 @@
 	<%@ include file="Header.jsp"%>
 	<br>
 	<h1 align="Center">
-		<font size="10px" color="red">Welcome to ORS </font>
+		<font size="10px" color="red">Welcome to ORS<%=isLogin ? "(" + userBean.getFirstName() + ")" : ""%>
+		</font>
 	</h1>
 	<%@ include file="Footer.jsp"%>
 </body>

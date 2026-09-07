@@ -18,7 +18,7 @@ public class HTMLUtility {
 
 		boolean select = true;
 		if (select) {
-			sb.append("<option selected value=''>--------------Select---------------</option>");
+			sb.append("<option selected value=''>-----------Select------------</option>");
 		}
 
 		for (String key : keys) {
@@ -63,6 +63,17 @@ public class HTMLUtility {
 		System.out.println(sb.toString());
 
 		return sb.toString();
+	}
+
+	public static void main(String[] args) {
+
+		HashMap<String, String> map = new HashMap<String, String>();
+
+		map.put("male", "male");
+		map.put("female", "female");
+
+		System.out.println(getList("gender", "male", map));
+
 	}
 
 }

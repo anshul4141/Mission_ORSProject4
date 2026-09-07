@@ -37,9 +37,9 @@
                 %>
 				<div>
 					<h3>Hi, Guest</h3>
-					<a href="#"><b>Welcome</b></a> | 
-					<a href="#"><b>Login</b></a> |
-					<a href="#"><b>SignUp</b></a>
+					<a href="<%=ORSView.WELCOME_CTL%>"><b>Welcome</b></a> | 
+					<a href="<%=ORSView.LOGIN_CTL%>"><b>Login</b></a> |
+					<a href="<%=ORSView.USER_REGISTRATION_CTL%>"><b>SignUp</b></a>
 				</div> 
 				<%
                 }
