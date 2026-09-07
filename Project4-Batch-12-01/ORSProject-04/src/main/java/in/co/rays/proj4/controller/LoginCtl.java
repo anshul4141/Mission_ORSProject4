@@ -31,7 +31,7 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 		}
 		if (DataValidator.isNull(request.getParameter("password"))) {
 			pass = false;
-			request.setAttribute("login", "password is required");
+			request.setAttribute("password", "password is required");
 		}
 
 		return pass;
@@ -87,6 +87,7 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 				ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
 				return;
 			} else {
+//				request.setAttribute("error", "Invalid login or password");
 				ServletUtility.setErrorMessage("Invalid login or password", request);
 			}
 		}

@@ -101,10 +101,10 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 
 		if (id > 0) {
 			model.update(bean);
-			ServletUtility.setSuccessMessage("Data is successfully updated", request);
+			ServletUtility.setSuccessMessage("record is successfully updated", request);
 		} else {
 			model.add(bean);
-			ServletUtility.setSuccessMessage("Data is successfully saved", request);
+			ServletUtility.setSuccessMessage("record is successfully saved", request);
 		}
 		ServletUtility.forward(getView(), request, response);
 

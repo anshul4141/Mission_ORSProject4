@@ -26,7 +26,9 @@
 				<div>
 					<h3><b><%=welcomeMsg + userBean.getFirstName() + "(" + roleName + ")"%></b></h3>
 					<a href="<%=ORSView.ROLE_CTL%>"><b>Add Role</b></a> | 
-					<a href="<%=ORSView.ROLE_LIST_CTL%>"><b>Role List</b></a> | 
+					<a href="<%=ORSView.ROLE_LIST_CTL%>"><b>Role List</b></a> |
+					<a href="<%=ORSView.USER_CTL%>"><b>Add User</b></a> | 
+					<a href="<%=ORSView.USER_LIST_CTL%>"><b>User List</b></a> |  
 					<a href="LoginCtl?operation=logout"><b>Logout</b> </a>
 				</div> <%
                 }

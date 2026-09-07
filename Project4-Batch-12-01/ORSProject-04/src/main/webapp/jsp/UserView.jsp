@@ -16,11 +16,11 @@
 	String _err = ServletUtility.getErrorMessage(request);
 	%>
 
-	<form action="<%=ORSView.USER_REGISTRATION_CTL%>" method="post">
+	<form action="<%=ORSView.USER_CTL%>" method="post">
 
 		<div align="center">
 
-			<h1>Registration</h1>
+			<h1>Add User</h1>
 
 			<h3 style="color: green"><%=_suc%></h3>
 			<h3 style="color: red"><%=_err%></h3>
@@ -60,6 +60,18 @@
 					<td><input type="password" name="confirmPassword" value=""
 						placeholder="re-enter your password"></td>
 					<td style="color: red"><%=ServletUtility.getErrorMessage("confirmPassword", request)%></td>
+				</tr>
+
+				<tr>
+					<th>Role<font color="red">*</font></th>
+					<td><select class='form-control' name='roleId'>
+							<option selected value=''>-------------Select------------</option>
+							<option value='1'>Admin</option>
+							<option value='2'>Student</option>
+							<option value='3'>College</option>
+							<option value='4'>KIOSK</option>
+					</select></td>
+					<td style="color: red"><%=ServletUtility.getErrorMessage("roleId", request)%></td>
 				</tr>
 
 				<tr>

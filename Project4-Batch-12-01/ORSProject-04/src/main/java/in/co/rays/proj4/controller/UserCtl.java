@@ -1,23 +1,14 @@
 package in.co.rays.proj4.controller;
 
-import java.io.IOException;
-
-import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
-import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.model.UserModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
-import in.co.rays.proj4.util.ServletUtility;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/UserRegistrationCtl")
-public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
-
-	public static final String OP_SIGN_UP = "SignUp";
+@WebServlet("/UserCtl")
+public class UserCtl extends BaseCtl<UserBean, UserModel> {
 
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -51,6 +42,10 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 			request.setAttribute("gender", "gender is required");
 			pass = false;
 		}
+		if (DataValidator.isNull(request.getParameter("roleId"))) {
+			request.setAttribute("roleId", "role is required");
+			pass = false;
+		}
 		if (DataValidator.isNull(request.getParameter("dob"))) {
 			request.setAttribute("dob", "dob is required");
 			pass = false;
@@ -69,7 +64,7 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 
 		UserBean bean = new UserBean();
 
-		bean.setRoleId(RoleBean.STUDENT);
+		bean.setRoleId(DataUtility.getInt(request.getParameter("roleId")));
 		bean.setFirstName(DataUtility.getString(request.getParameter("firstName")));
 		bean.setLastName(DataUtility.getString(request.getParameter("lastName")));
 		bean.setLogin(DataUtility.getString(request.getParameter("login")));
@@ -84,30 +79,8 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		String op = DataUtility.getString(request.getParameter("operation"));
-
-		UserBean bean = populateBean(request);
-		UserModel model = getModel();
-
-		if (OP_SIGN_UP.equalsIgnoreCase(op)) {
-			try {
-//				model.register(bean);
-				model.add(bean);
-				ServletUtility.setSuccessMessage("User is registred, Login now", request);
-			} catch (DuplicateRecordException e) {
-				ServletUtility.setErrorMessage("Login id already exists", request);
-			}
-		}
-
-		ServletUtility.forward(getView(), request, response);
-	}
-
-	@Override
 	protected String getView() {
-		return ORSView.USER_REGISTRATION_VIEW;
+		return ORSView.USER_VIEW;
 	}
 
 	@Override

@@ -40,8 +40,8 @@ public interface ORSView {
 
 	public String MARKSHEET_CTL = APP_CONTEXT + "/ctl/MarksheetCtl";
 	public String MARKSHEET_LIST_CTL = APP_CONTEXT + "/ctl/MarksheetListCtl";
-	public String USER_CTL = APP_CONTEXT + "/ctl/UserCtl";
-	public String USER_LIST_CTL = APP_CONTEXT + "/ctl/UserListCtl";
+	public String USER_CTL = APP_CONTEXT + "/UserCtl";
+	public String USER_LIST_CTL = APP_CONTEXT + "/UserListCtl";
 	public String COLLEGE_CTL = APP_CONTEXT + "/ctl/CollegeCtl";
 	public String COLLEGE_LIST_CTL = APP_CONTEXT + "/ctl/CollegeListCtl";
 	public String STUDENT_CTL = APP_CONTEXT + "/ctl/StudentCtl";
