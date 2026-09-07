@@ -1,0 +1,23 @@
+1.  LoginForm form par Sign In button par click kiya.
+    - Form tag me:
+      <form action="<%=ORSView.LOGIN_CTL%>" method="post">
+
+4.  doPost() method chali doPost() method me operation ko get kiya:
+    - String op = DataUtility.getString(request.getParameter("operation"));
+
+5.  populateBean(request) method call ki aur view se Login aur Password
+    get kiya or UserBean me set kiya. request.getParameter() method se
+
+6.  Condition check hui:
+    - if(OP_SIGN_IN.equalsIgnoreCase(op))
+
+7.  UserModel ki authenticate() method call hui:
+    - bean = m.authenticate(bean.getLogin(), bean.getPassword());
+
+8.  authenticate() method ne bean return kiya.
+
+9. Agar bean != null hua to: 
+    - User session me set kiya. == session.setAttribute("user", bean)
+    - RoleModel se user ka role nikala. 
+    - Role bhi session me set kiya. == session.setAttribute("role", rbean.getName())
+    - ServletUtility.redirect(ORSView.WELCOME_CTL, request, response) se Welcome page par redirect kiya.

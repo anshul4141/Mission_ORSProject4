@@ -1,0 +1,32 @@
+1.  LoginForm form par Sign In button par click kiya.
+    - Form tag me:
+      <form action="<%=ORSView.LOGIN_CTL%>" method="post">
+
+2.  Request LoginCtl par gayi aur sabse pehle BaseCtl ki service() method call hui.
+
+3.  Condition di:
+    - Agar if("POST".equals(request.getMethod())) hai,
+      to validate(request) method call hui.
+
+4.  validate() method child class (LoginCtl) ki call hui
+    (method overriding).
+
+5.  validate() method (LoginCtl me) me Login aur Password ko
+    DataValidator ki methods se check kiya.
+
+6.  Login ko check kiya:
+    - if(DataValidator.isNull(request.getParameter("login"))) hai, to
+    - pass = false kiya aur request attribute me key aur value ke
+      saath error message set kiya.
+
+    - Same process Password ke liye bhi hua.
+
+7.  service() method me validate() wali condition true hui
+    aur view par forward kiya:
+    - ServletUtility.forward(getView(), request, response)
+
+8.  View par ServletUtility.getErrorMessage() se key aur request ke
+    through message get kiya aur expression tag me print kiya:
+    - ServletUtility.getErrorMessage("key", request)
+
+    Isse error messages show hote hain.

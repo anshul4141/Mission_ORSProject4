@@ -1,0 +1,33 @@
+1.  LoginForm form par Sign In button par click kiya.
+    - Form tag me:
+      <form action="<%=ORSView.LOGIN_CTL%>" method="post">
+
+4.  doPost() method chali doPost() method me operation ko get kiya:
+    - String op = DataUtility.getString(request.getParameter("operation"));
+
+5.  populateBean(request) method call ki aur view se Login aur Password
+    get kiya or UserBean me set kiya. request.getParameter() method se
+
+6.  Condition check hui:
+    - if(OP_SIGN_IN.equalsIgnoreCase(op))
+
+7.  UserModel ki authenticate() method call hui:
+    - bean = m.authenticate(bean.getLogin(), bean.getPassword());
+
+8.  authenticate() method ne null bean return kiya login or password galat tha isliye.
+
+9. condtion chek hui bean == null hua to:
+    - ServletUtility.setErrorMessage("Invalid login or password", request)
+      se error message request me set kiya.
+
+10. Uske baad:
+    - ServletUtility.forward(getView(), request, response)
+      se Login view par forward kiya.
+
+11. View par:
+    - ServletUtility.getErrorMessage(request)
+      se "Invalid login or password" message get kiya aur
+      expression tag me print kiya.
+
+    Isse "Invalid login or password" ka business validation
+    message show hota hai.
