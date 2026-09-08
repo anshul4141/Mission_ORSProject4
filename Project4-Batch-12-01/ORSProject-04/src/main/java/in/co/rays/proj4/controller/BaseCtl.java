@@ -114,6 +114,8 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		preload(request);
+
 		if ("POST".equals(request.getMethod())) {
 			if (validate(request) == false) {
 				ServletUtility.forward(getView(), request, response);

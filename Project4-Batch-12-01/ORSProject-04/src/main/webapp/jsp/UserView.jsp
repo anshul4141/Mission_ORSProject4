@@ -1,4 +1,6 @@
-<%@page import="in.co.rays.proj4.controller.UserRegistrationCtl"%>
+<%@page import="in.co.rays.proj4.bean.RoleBean"%>
+<%@page import="java.util.List"%>
+<%@page import="in.co.rays.proj4.controller.UserCtl"%>
 <%@page import="in.co.rays.proj4.controller.LoginCtl"%>
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@page import="in.co.rays.proj4.controller.BaseCtl"%>
@@ -14,6 +16,7 @@
 	<%
 	String _suc = ServletUtility.getSuccessMessage(request);
 	String _err = ServletUtility.getErrorMessage(request);
+	List<RoleBean> roleList = (List) request.getAttribute("roleList");
 	%>
 
 	<form action="<%=ORSView.USER_CTL%>" method="post">
@@ -66,10 +69,13 @@
 					<th>Role<font color="red">*</font></th>
 					<td><select class='form-control' name='roleId'>
 							<option selected value=''>-------------Select------------</option>
-							<option value='1'>Admin</option>
-							<option value='2'>Student</option>
-							<option value='3'>College</option>
-							<option value='4'>KIOSK</option>
+							<%
+							for (RoleBean rbean : roleList) {
+							%>
+							<option value='<%=rbean.getKey()%>'><%=rbean.getValue()%></option>
+							<%
+							}
+							%>
 					</select></td>
 					<td style="color: red"><%=ServletUtility.getErrorMessage("roleId", request)%></td>
 				</tr>
@@ -93,7 +99,7 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=UserRegistrationCtl.OP_SIGN_UP%>"></td>
+						value="<%=UserCtl.OP_SAVE%>"></td>
 				</tr>
 
 			</table>

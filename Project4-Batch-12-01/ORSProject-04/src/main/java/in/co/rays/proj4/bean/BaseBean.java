@@ -66,7 +66,7 @@ public abstract class BaseBean implements DropdownListBean {
 
 	@Override
 	public String getKey() {
-		return null;
+		return id+"";
 	}
 
 }
