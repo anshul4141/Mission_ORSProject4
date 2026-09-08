@@ -1,0 +1,27 @@
+1.  UserRegistrationView form par SignUp button par click kiya.
+    - Form tag me:
+      <form action="<%=ORSView.USER_REGISTRAION_CTL%>" method="post">
+
+2.  doPost() method chali doPost() method me operation ko get kiya:
+    - String op = DataUtility.getString(request.getParameter("operation"));
+
+3.  populateBean(request) method call ki aur view se data
+    get kiya or UserBean me set kiya. request.getParameter() method se
+
+4.  Condition check hui:
+    - if(OP_SIGN_UP.equalsIgnoreCase(op)) hai toh.
+
+5.  UserModel ki add(bean) method call hui:
+    - UserModel ki add(bean) method me insert ki query chalai record data base me add kiya
+
+6.  UserRegistrationCtl me success message set kiya servletUtility.setSuccessMessage("--") method se
+
+
+7.  Uske baad:
+    - ServletUtility.forward(getView(), request, response)
+      se UserRegistrationView view par forward kiya.
+
+8.  View par:
+    - ServletUtility.getSuccessMessage(request)
+      se "--" message get kiya aur
+      expression tag me print kiya.

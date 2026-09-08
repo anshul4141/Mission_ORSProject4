@@ -1,0 +1,32 @@
+1.  UserRegistrationView par SignUp button par click kiya.
+    - Form tag me:
+      <form action="<%=ORSView.USER_REGISTRATION_CTL%>" method="post">
+
+2.  Request UserRegistrationCtl par gayi aur sabse pehle BaseCtl ki service() method call hui.
+
+3.  Condition di:
+    - Agar if("POST".equals(request.getMethod())) hai,
+      to validate(request) method call hui.
+
+4.  validate() method child class (UserRegistrationCtl) ki call hui
+    (method overriding).
+
+5.  validate() method (UserRegistrationCl) me input field ko
+    DataValidator ki methods se check kiya.
+
+6.  firstName ko check kiya:
+    - if(DataValidator.isNull(request.getParameter("firstName"))) hai, to
+    - pass = false kiya aur request attribute me key aur value ke
+      saath error message set kiya.
+
+    - Same process baki input field ke liye bhi hua.
+
+7.  service() method me validate() wali condition true hui
+    aur view par forward kiya:
+    - ServletUtility.forward(getView(), request, response)
+
+8.  View par ServletUtility.getErrorMessage() se key aur request ke
+    through message get kiya aur expression tag me print kiya:
+    - ServletUtility.getErrorMessage("key", request)
+
+    Isse error messages show hote hain.
