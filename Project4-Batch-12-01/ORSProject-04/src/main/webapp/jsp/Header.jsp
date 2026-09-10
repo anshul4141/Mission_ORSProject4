@@ -29,7 +29,7 @@
 					<a href="<%=ORSView.ROLE_LIST_CTL%>"><b>Role List</b></a> |
 					<a href="<%=ORSView.USER_CTL%>"><b>Add User</b></a> | 
 					<a href="<%=ORSView.USER_LIST_CTL%>"><b>User List</b></a> |  
-					<a href="LoginCtl?operation=logout"><b>Logout</b> </a>
+					<a href="<%=ORSView.LOGIN_CTL %>?operation=logout"><b>Logout</b> </a>
 				</div> <%
                 }
                 %> 

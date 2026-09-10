@@ -56,7 +56,7 @@ public class RoleModel extends BaseModel<RoleBean> {
 		RoleBean existBean = findByName(bean.getName());
 
 		if (existBean != null && existBean.getId() != bean.getId()) {
-			throw new DuplicateRecordException("role name already exist");
+			throw new DuplicateRecordException("role already exist");
 		}
 
 		try {
@@ -64,7 +64,7 @@ public class RoleModel extends BaseModel<RoleBean> {
 			conn.setAutoCommit(false); // Begin transaction
 
 			PreparedStatement pstmt = conn.prepareStatement("update " + getTable()
-					+ " set name = ?, description = ?, createdBy = ?, modifiedBy = ?, createdDatetime = ?, modifiedDatetime = ? where id = ?");
+					+ " set name = ?, description = ?, created_By = ?, modified_By = ?, created_Datetime = ?, modified_Datetime = ? where id = ?");
 			pstmt.setString(1, bean.getName());
 			pstmt.setString(2, bean.getDescription());
 			pstmt.setString(3, bean.getCreatedBy());
@@ -72,12 +72,13 @@ public class RoleModel extends BaseModel<RoleBean> {
 			pstmt.setTimestamp(5, bean.getCreatedDatetime());
 			pstmt.setTimestamp(6, bean.getModifiedDatetime());
 			pstmt.setLong(7, bean.getId());
-			pstmt.executeUpdate();
-
+			int i = pstmt.executeUpdate();
 			conn.commit(); // End transaction
+			System.out.println("record updated: " + i);
 			pstmt.close();
 
 		} catch (SQLException e) {
+			e.printStackTrace();
 			JDBCDataSource.trnRollBack(conn);
 		} finally {
 			JDBCDataSource.closeConnection(conn);

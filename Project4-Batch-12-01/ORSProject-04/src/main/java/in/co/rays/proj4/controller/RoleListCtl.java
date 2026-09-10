@@ -6,7 +6,7 @@ import in.co.rays.proj4.util.DataUtility;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 
-@WebServlet("/RoleListCtl")
+@WebServlet("/ctl/RoleListCtl")
 public class RoleListCtl extends BaseListCtl<RoleBean, RoleModel> {
 
 	@Override

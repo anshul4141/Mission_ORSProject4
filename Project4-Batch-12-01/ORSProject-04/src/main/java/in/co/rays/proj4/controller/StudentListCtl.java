@@ -6,7 +6,7 @@ import in.co.rays.proj4.util.DataUtility;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 
-@WebServlet("/StudentListCtl")
+@WebServlet("/ctl/StudentListCtl")
 public class StudentListCtl extends BaseListCtl<StudentBean, StudentModel> {
 
 	@Override

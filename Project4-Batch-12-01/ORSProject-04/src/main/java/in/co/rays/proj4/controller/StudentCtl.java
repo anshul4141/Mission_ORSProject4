@@ -12,7 +12,7 @@ import in.co.rays.proj4.util.PropertyReader;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 
-@WebServlet("/StudentCtl")
+@WebServlet("/ctl/StudentCtl")
 public class StudentCtl extends BaseCtl<StudentBean, StudentModel> {
 
 	@Override

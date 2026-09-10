@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.util.HTMLUtility"%>
 <%@page import="in.co.rays.proj4.bean.RoleBean"%>
 <%@page import="java.util.List"%>
 <%@page import="in.co.rays.proj4.controller.UserCtl"%>
@@ -67,7 +68,7 @@
 
 				<tr>
 					<th>Role<font color="red">*</font></th>
-					<td><select class='form-control' name='roleId'>
+					<%-- <td><select class='form-control' name='roleId'>
 							<option selected value=''>-------------Select------------</option>
 							<%
 							for (RoleBean rbean : roleList) {
@@ -76,7 +77,8 @@
 							<%
 							}
 							%>
-					</select></td>
+					</select></td> --%>
+					<td><%=HTMLUtility.getList("roleId", "", roleList)%></td>
 					<td style="color: red"><%=ServletUtility.getErrorMessage("roleId", request)%></td>
 				</tr>
 
