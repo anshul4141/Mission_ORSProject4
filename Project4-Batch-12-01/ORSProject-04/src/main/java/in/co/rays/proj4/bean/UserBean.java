@@ -24,6 +24,7 @@ public class UserBean extends BaseBean {
 	private String lock = INACTIVE;
 	private String registeredIP;
 	private String lastLoginIP;
+	private String photo;
 
 	public String getFirstName() {
 		return firstName;
@@ -137,6 +138,14 @@ public class UserBean extends BaseBean {
 		this.lastLoginIP = lastLoginIP;
 	}
 
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
 	@Override
 	public String getValue() {
 		return null;
@@ -159,6 +168,7 @@ public class UserBean extends BaseBean {
 			this.setLock(rs.getString(12));
 			this.setRegisteredIP(rs.getString(13));
 			this.setLastLoginIP(rs.getString(14));
+			this.setPhoto(rs.getString(19));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -149,6 +149,30 @@ public class UserModel extends BaseModel<UserBean> {
 		return sql.toString();
 	}
 
+	public void updatePhoto(long id, String photo) throws ApplicationException {
+		Connection conn = null;
+
+		try {
+			conn = JDBCDataSource.getConnection();
+			conn.setAutoCommit(false); // Begin transaction
+			PreparedStatement pstmt = conn.prepareStatement("UPDATE ST_USER SET PHOTO = ? WHERE ID = ?");
+			pstmt.setString(1, photo);
+			pstmt.setLong(2, id);
+			pstmt.executeUpdate();
+			conn.commit(); // End transaction
+			pstmt.close();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (Exception ex) {
+				throw new ApplicationException("Exception : updatePhoto rollback exception " + ex.getMessage());
+			}
+			throw new ApplicationException("Exception in updating User Photo");
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+	}
+
 	@Override
 	public String getTable() {
 		return "st_user";
