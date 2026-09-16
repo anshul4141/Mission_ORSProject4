@@ -33,56 +33,57 @@
 
 	<h1 align="center"><%=bean != null && bean.getId() > 0 ? "Update User" : "Add User"%></h1>
 
+	<div align="center">
+		<h3 style="color: green"><%=_suc%></h3>
+		<h3 style="color: red"><%=_err%></h3>
+	</div>
 
 	<div align="center">
 
-		<div align="center">
+		<%
+		if (bean.getId() > 0) {
+		%>
 
-			<%
-			if (bean.getId() > 0) {
-			%>
+		<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST" 
+			enctype="multipart/form-data">
 
-			<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST"
-				enctype="multipart/form-data">
+			<input type="hidden" name="id" value="<%=bean.getId()%>">
 
-				<input type="hidden" name="id" value="<%=bean.getId()%>">
+			<table>
 
-				<table>
+				<tr>
+					<th>Photo</th>
+				</tr>
 
-					<tr>
-						<th>Photo</th>
-					</tr>
+				<tr>
+					<td align="center"><img
+						src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
+						onerror="this.style.display='none';" alt="User Photo" width="80"
+						height="80"
+						style="object-fit: cover; border-radius: 50%; border: 1px solid #ccc;">
+					</td>
+				</tr>
 
-					<tr>
-						<td align="center"><img
-							src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
-							onerror="this.style.display='none';" alt="User Photo" width="80"
-							height="80"
-							style="object-fit: cover; border-radius: 50%; border: 1px solid #ccc;">
-						</td>
-					</tr>
+				<tr>
+					<td align="center"><input type="file" name="photo"
+						accept="image/*"></td>
+				</tr>
 
-					<tr>
-						<td align="center"><input type="file" name="photo"
-							accept="image/*"></td>
-					</tr>
+				<tr>
+					<td align="center"><input type="submit" value="Upload Photo">
+					</td>
+				</tr>
 
-					<tr>
-						<td align="center"><input type="submit" value="Upload Photo">
-						</td>
-					</tr>
+			</table>
 
-				</table>
+		</form>
 
-			</form>
-
-			<%
-			}
-			%>
-
-		</div>
+		<%
+		}
+		%>
 
 	</div>
+
 
 	<form action="<%=ORSView.USER_CTL%>" method="post">
 
@@ -90,9 +91,6 @@
 			value="<%=DataUtility.getStringData(bean.getId())%>">
 
 		<div align="center">
-
-			<h3 style="color: green"><%=_suc%></h3>
-			<h3 style="color: red"><%=_err%></h3>
 
 			<table>
 				<tr>
@@ -160,7 +158,17 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=UserCtl.OP_SAVE%>"></td>
+						value="<%=UserCtl.OP_SAVE%>"> 
+					<%
+                    if (bean.getId() > 0) {
+                    %>
+						<button>
+							<a href="<%=ORSView.USER_LIST_CTL%>">Cancel</a>
+						</button> 
+					<%
+                     }
+                     %>
+                   </td>
 				</tr>
 			</table>
 		</div>
