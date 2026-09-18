@@ -20,11 +20,11 @@
 	String _err = ServletUtility.getErrorMessage(request);
 	%>
 
-	<form action="<%=ORSView.LOGIN_CTL%>" method="post">
+	<form action="<%=ORSView.FORGET_PASSWORD_CTL%>" method="post">
 
 		<div align="center">
 
-			<h1><%=ms.get("login.title")%></h1>
+			<h1>Forget Password</h1>
 
 			<h3 style="color: green"><%=_suc%></h3>
 			<h3 style="color: red"><%=_err%></h3>
@@ -40,22 +40,9 @@
 				</tr>
 
 				<tr>
-					<th><%=ms.get("login.password")%><font color="red">*</font></th>
-					<td><input type="password" name="password"
-						value="<%=DataUtility.getStringData(bean.getPassword())%>"
-						placeholder="enter your password"></td>
-					<td style="color: red"><%=ServletUtility.getErrorMessage("password", request)%></td>
-				</tr>
-
-				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=LoginCtl.OP_SIGN_IN%>"></td>
-				</tr>
-				<tr>
-					<th></th>
-					<td><a href="<%=ORSView.FORGET_PASSWORD_CTL%>">forget your
-							password ?</a></td>
+						value="<%=BaseCtl.OP_GO%>"></td>
 				</tr>
 			</table>
 		</div>

@@ -94,8 +94,8 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 
 		if (OP_SIGN_UP.equalsIgnoreCase(op)) {
 			try {
-//				model.register(bean);
-				model.add(bean);
+				model.register(bean);
+//				model.add(bean);
 				ServletUtility.setSuccessMessage("User is registred, Login now", request);
 			} catch (DuplicateRecordException e) {
 				ServletUtility.setErrorMessage("Login id already exists", request);
