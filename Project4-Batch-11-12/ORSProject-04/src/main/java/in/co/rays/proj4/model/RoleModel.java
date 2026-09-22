@@ -73,7 +73,22 @@ public class RoleModel extends BaseModel<RoleBean> {
 
 	@Override
 	public String getWhereClause(RoleBean bean) {
-		return null;
+
+		StringBuffer sql = new StringBuffer("");
+
+		if (bean != null) {
+			if (bean.getId() > 0) {
+				sql.append(" and id = " + bean.getId());
+			}
+			if (bean.getName() != null && bean.getName().length() > 0) {
+				sql.append(" and name like '" + bean.getName() + "%'");
+			}
+			if (bean.getDescription() != null && bean.getDescription().length() > 0) {
+				sql.append(" and description like '" + bean.getDescription() + "%'");
+			}
+		}
+
+		return sql.toString();
 	}
 
 	@Override

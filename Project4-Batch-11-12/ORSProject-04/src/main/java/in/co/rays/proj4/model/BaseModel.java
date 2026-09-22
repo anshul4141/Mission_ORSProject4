@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.exception.ApplicationException;
@@ -63,6 +65,72 @@ public abstract class BaseModel<T extends BaseBean> {
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+
+	}
+
+	public T findByPk(long id) {
+		Connection conn = null;
+		T bean = null;
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+
+			PreparedStatement pstmt = conn.prepareStatement("select * from " + getTable() + " where id = ?");
+
+			pstmt.setLong(1, id);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				bean = getBean();
+				bean.setResultSet(rs);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+
+		return bean;
+
+	}
+
+	public List<T> search(T bean, int pageNo, int pageSize) {
+		Connection conn = null;
+		List<T> list = new ArrayList<T>();
+
+		StringBuffer sql = new StringBuffer("select * from " + getTable() + " where 1 = 1");
+
+		sql.append(getWhereClause(bean));
+
+		if (pageSize > 0) {
+			pageNo = (pageNo - 1) * pageSize;
+			sql.append(" limit " + pageNo + ", " + pageSize);
+		}
+
+		System.out.println("sql ====> " + sql.toString());
+
+		try {
+
+			conn = JDBCDataSource.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bean = getBean();
+				bean.setResultSet(rs);
+				list.add(bean);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCDataSource.closeConnection(conn);
+		}
+
+		return list;
 
 	}
 
