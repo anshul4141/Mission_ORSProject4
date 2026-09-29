@@ -18,18 +18,18 @@ public class TestRoleModel {
 	public static RoleModel model = new RoleModel();
 
 	public static void main(String[] args) {
-//		testAdd();
+		testAdd();
 //		testUpdate();
 //		testDelete();
 //		testFindByPk();
-		testSearch();
+//		testSearch();
 	}
 
 	private static void testAdd() {
 		RoleBean bean = new RoleBean();
 
-		bean.setName("admin");
-		bean.setDescription("admin role");
+		bean.setName("Admin");
+		bean.setDescription("Admin role");
 		bean.setCreatedBy("root");
 		bean.setModifiedBy("root");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));

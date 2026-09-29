@@ -16,6 +16,12 @@ public class UserModel extends BaseModel<UserBean> {
 
 		Connection conn = null;
 
+		UserBean existBean = findByLogin(bean.getLogin());
+
+		if (existBean != null) {
+			throw new DuplicateRecordException("login already exist");
+		}
+
 		try {
 
 			conn = JDBCDataSource.getConnection();
@@ -58,6 +64,12 @@ public class UserModel extends BaseModel<UserBean> {
 	public void update(UserBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
+
+		UserBean existBean = findByLogin(bean.getLogin());
+
+		if (existBean != null && existBean.getId() != bean.getId()) {
+			throw new DuplicateRecordException("login already exist");
+		}
 
 		try {
 			conn = JDBCDataSource.getConnection();
@@ -123,6 +135,25 @@ public class UserModel extends BaseModel<UserBean> {
 		}
 
 		return sql.toString();
+	}
+
+	public UserBean findByLogin(String login) {
+
+		UserBean bean = findByUniqueColumn("login", login);
+
+		return bean;
+
+	}
+
+	public UserBean authenticate(String login, String password) {
+
+		UserBean bean = findByLogin(login);
+
+		if (bean != null && bean.getPassword().equals(password)) {
+			return bean;
+		}
+		return null;
+
 	}
 
 	@Override
