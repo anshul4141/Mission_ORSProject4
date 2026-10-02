@@ -7,6 +7,7 @@ import in.co.rays.proj4.bean.UserBean;
 import in.co.rays.proj4.model.BaseModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
+import in.co.rays.proj4.util.ServletUtility;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -77,18 +78,30 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 	}
 
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		ServletUtility.forward(getView(), request, response);
 
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 	}
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("service method");
 
+		if (request.getMethod() == "POST" && validate(request) == false) {
+			ServletUtility.forward(getView(), request, response);
+			return;
+		}
+
+		super.service(request, response);
 	}
 
 	public abstract M getModel();
