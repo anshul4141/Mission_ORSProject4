@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/LoginCtl")
 public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 
-	public final static String OP_SIGNIN = "SignIn";
+	public final static String OP_SIGN_IN = "SignIn";
 
 	@Override
 	protected boolean validate(HttpServletRequest request) {
@@ -50,10 +50,14 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 		ServletUtility.forward(getView(), request, response);
 
 	}
+	
+	
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 
 		ServletUtility.forward(getView(), request, response);
 	}

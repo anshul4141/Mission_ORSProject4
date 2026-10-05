@@ -34,7 +34,7 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=LoginCtl.OP_SIGNIN%>"></td>
+						value="<%=LoginCtl.OP_SIGN_IN%>"></td>
 				</tr>
 
 			</table>
