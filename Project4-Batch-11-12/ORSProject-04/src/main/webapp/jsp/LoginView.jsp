@@ -7,11 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<%
+	String succ = ServletUtility.getSuccessMessage(request);
+	String error = ServletUtility.getErrorMessage(request);
+	%>
+
 	<%@ include file="Header.jsp"%>
 
 	<div align="center">
 
 		<h1>Login</h1>
+
+		<h3 style="color: green"><%=succ%></h3>
+		<h3 style="color: red"><%=error%></h3>
 
 		<form action="<%=ORSView.LOGIN_CTL%>" method="post">
 

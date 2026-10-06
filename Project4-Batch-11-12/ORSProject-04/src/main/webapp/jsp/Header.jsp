@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.bean.RoleBean"%>
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
 <%@page import="in.co.rays.proj4.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,6 +13,7 @@
 
 	<%
 	UserBean user = (UserBean) session.getAttribute("user");
+	String role = (String) session.getAttribute("role");
 	boolean isLogin = user != null;
 	String welcomeMsg = "Hii, ";
 	%>
@@ -20,7 +22,7 @@
 	if (isLogin) {
 	%>
 
-	<h2><%=welcomeMsg + user.getFirstName()%></h2>
+	<h2><%=welcomeMsg + user.getFirstName() + "(" + role + ")"%></h2>
 	<a href="<%=ORSView.ROLE_CTL%>">Add Role</a> |
 	<a href="<%=ORSView.ROLE_LIST_CTL%>">Role List</a> |
 	<a href="<%=ORSView.USER_CTL%>">Add User</a> |

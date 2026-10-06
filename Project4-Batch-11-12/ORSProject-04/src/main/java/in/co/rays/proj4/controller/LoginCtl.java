@@ -2,8 +2,11 @@ package in.co.rays.proj4.controller;
 
 import java.io.IOException;
 
+import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
+import in.co.rays.proj4.model.RoleModel;
 import in.co.rays.proj4.model.UserModel;
+import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
 import in.co.rays.proj4.util.ServletUtility;
 import jakarta.servlet.ServletException;
@@ -37,6 +40,17 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 	}
 
 	@Override
+	protected UserBean populateBean(HttpServletRequest request) {
+
+		UserBean bean = new UserBean();
+
+		bean.setLogin(DataUtility.getString(request.getParameter("login")));
+		bean.setPassword(DataUtility.getString(request.getParameter("password")));
+
+		return bean;
+	}
+
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -44,22 +58,44 @@ public class LoginCtl extends BaseCtl<UserBean, UserModel> {
 
 		if (op != null) {
 			HttpSession session = request.getSession();
+			ServletUtility.setSuccessMessage("user logout successfully", request);
 			session.invalidate();
 		}
 
 		ServletUtility.forward(getView(), request, response);
 
 	}
-	
-	
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
+		String op = DataUtility.getString(request.getParameter("operation"));
+		HttpSession session = request.getSession();
+
+		UserBean bean = populateBean(request);
+		UserModel model = getModel();
+		RoleModel rmodel = new RoleModel();
+
+		if (OP_SIGN_IN.equalsIgnoreCase(op)) {
+
+			bean = model.authenticate(bean.getLogin(), bean.getPassword());
+
+			if (bean != null) {
+
+				session.setAttribute("user", bean);
+				RoleBean rbean = rmodel.findByPk(bean.getRoleId());
+				session.setAttribute("role", rbean.getName());
+				ServletUtility.redirect(ORSView.WELCOME_CTL, request, response);
+				return;
+
+			} else {
+				ServletUtility.setErrorMessage("Invalid login or password", request);
+			}
+		}
 
 		ServletUtility.forward(getView(), request, response);
+
 	}
 
 	@Override
