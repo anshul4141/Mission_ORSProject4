@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import in.co.rays.proj4.bean.BaseBean;
 import in.co.rays.proj4.bean.UserBean;
+import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.model.BaseModel;
 import in.co.rays.proj4.util.DataUtility;
 import in.co.rays.proj4.util.DataValidator;
@@ -88,6 +89,18 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		B bean = populateBean(request);
+		M model = getModel();
+
+		try {
+			model.add(bean);
+			ServletUtility.setSuccessMessage("record saved successfully", request);
+		} catch (DuplicateRecordException e) {
+			ServletUtility.setErrorMessage("record already exist", request);
+		}
+
+		ServletUtility.forward(getView(), request, response);
 
 	}
 
