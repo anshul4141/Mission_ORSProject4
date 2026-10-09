@@ -11,7 +11,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 //3. Provide Maximum Connection limitation with database.
 public final class JDBCDataSource {
 
-	private static final JDBCDataSource jdbc = null;
+	private static JDBCDataSource jdbc = null;
 	private ComboPooledDataSource cpds = null;
 
 	private static ResourceBundle rb = ResourceBundle.getBundle("in.co.rays.proj4.bundle.System");
@@ -38,7 +38,8 @@ public final class JDBCDataSource {
 	private static JDBCDataSource getInstance() {
 
 		if (jdbc == null) {
-			return new JDBCDataSource();
+			jdbc = new JDBCDataSource();
+			return jdbc;
 		}
 		return jdbc;
 	}

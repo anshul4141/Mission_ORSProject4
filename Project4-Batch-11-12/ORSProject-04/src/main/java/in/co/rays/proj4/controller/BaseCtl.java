@@ -82,6 +82,14 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		long id = DataUtility.getLong(request.getParameter("id"));
+		M model = getModel();
+
+		if (id > 0) {
+			BaseBean bean = model.findByPk(id);
+			ServletUtility.setBean(bean, request);
+		}
+
 		ServletUtility.forward(getView(), request, response);
 
 	}
@@ -94,8 +102,13 @@ public abstract class BaseCtl<B extends BaseBean, M extends BaseModel> extends H
 		M model = getModel();
 
 		try {
-			model.add(bean);
-			ServletUtility.setSuccessMessage("record saved successfully", request);
+			if (bean.getId() > 0) {
+				model.update(bean);
+				ServletUtility.setSuccessMessage("record updated successfully", request);
+			} else {
+				model.add(bean);
+				ServletUtility.setSuccessMessage("record saved successfully", request);
+			}
 		} catch (DuplicateRecordException e) {
 			ServletUtility.setErrorMessage("record already exist", request);
 		}

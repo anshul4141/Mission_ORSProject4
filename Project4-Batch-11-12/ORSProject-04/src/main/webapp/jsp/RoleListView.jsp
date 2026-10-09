@@ -37,8 +37,10 @@
 						onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)">Select
 						All</th>
 					<th>S No.</th>
+					<th>Id</th>
 					<th>Name</th>
 					<th>Description</th>
+					<th>Edit</th>
 				</tr>
 
 				<%
@@ -49,8 +51,10 @@
 					<td><input type="checkbox" name="ids"
 						value="<%=bean.getId()%>"></td>
 					<td><%=index++%></td>
+					<td><%=bean.getId()%></td>
 					<td><%=bean.getName()%></td>
 					<td><%=bean.getDescription()%></td>
+					<td><a href="<%=ORSView.ROLE_CTL + "?id=" + bean.getId()%>">Edit</a></td>
 				</tr>
 				<%
 				}
