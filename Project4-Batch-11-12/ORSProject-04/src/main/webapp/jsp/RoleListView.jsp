@@ -1,3 +1,4 @@
+<%@page import="in.co.rays.proj4.controller.RoleCtl"%>
 <%@page import="in.co.rays.proj4.controller.BaseCtl"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
@@ -29,6 +30,15 @@
 		<h3 style="color: green"><%=succ%></h3>
 		<h3 style="color: red"><%=error%></h3>
 		<form action="<%=ORSView.ROLE_LIST_CTL%>" method="post">
+
+			<table>
+				<tr>
+					<th>Name</th>
+					<td><input type="text" name="name" value=""
+						placeholder="search by name"> <input type="submit"
+						name="operation" value="<%=RoleCtl.OP_SEARCH%>"></td>
+				</tr>
+			</table>
 
 			<table border="1px" width="100%">
 
