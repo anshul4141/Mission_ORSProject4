@@ -1,46 +1,84 @@
-<%@page import="in.co.rays.proj4.bean.RoleBean"%>
+<%@page import="in.co.rays.proj4.util.MessageSource"%>
 <%@page import="in.co.rays.proj4.controller.ORSView"%>
 <%@page import="in.co.rays.proj4.bean.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Header</title>
 </head>
+
 <body>
 
-	<%
-	UserBean user = (UserBean) session.getAttribute("user");
-	String role = (String) session.getAttribute("role");
-	boolean isLogin = user != null;
-	String welcomeMsg = "Hii, ";
-	%>
+<%
+MessageSource ms = MessageSource.getInstance();
+UserBean user = (UserBean) session.getAttribute("user");
+String roleName = (String) session.getAttribute("role");
+boolean isLogin = user != null;
+String welcomeMsg = "Hi, ";
+String locale = ms.getLanguage();
+%>
 
-	<%
-	if (isLogin) {
-	%>
+	<table>
+		<tr style="width: 100%;">
 
-	<h2><%=welcomeMsg + user.getFirstName() + "(" + role + ")"%></h2>
-	<a href="<%=ORSView.ROLE_CTL%>">Add Role</a> |
-	<a href="<%=ORSView.ROLE_LIST_CTL%>">Role List</a> |
-	<a href="<%=ORSView.USER_CTL%>">Add User</a> |
-	<a href="<%=ORSView.USER_LIST_CTL%>">User List</a> |
-	<a href="<%=ORSView.LOGIN_CTL + "?operation=logout"%>">Logout</a> |
+			<td style="width: 98%;">
+				<%
+				if (isLogin) {
+				%>
 
-	<%
-	} else {
-	%>
-	<h2>Hii, Guest</h2>
-	<a href="<%=ORSView.LOGIN_CTL%>">Login</a> |
-	<a href="<%=ORSView.USER_REGISTRATION_CTL%>">SignUp</a> |
-	<%
-	}
-	%>
+				<div>
+					<h3>
+						<b><%=welcomeMsg + user.getFirstName() + "(" + roleName + ")"%></b>
+					</h3>
 
-	<a href="<%=ORSView.WELCOME_CTL%>">Welcome</a>
+					<a href="<%=ORSView.ROLE_CTL%>"><b>Add Role</b></a> | <a
+						href="<%=ORSView.ROLE_LIST_CTL%>"><b>Role List</b></a> | <a
+						href="<%=ORSView.USER_CTL%>"><b>Add User</b></a> | <a
+						href="<%=ORSView.USER_LIST_CTL%>"><b>User List</b></a> | <a
+						href="<%=ORSView.LOGIN_CTL%>?operation=logout"> <b>Logout</b>
+					</a>
+				</div> 
+				
+				<%
+                }
+
+                if (!isLogin) {
+                %>
+
+				<div>
+					<h3>Hi, Guest</h3>
+
+					<a href="<%=ORSView.WELCOME_CTL%>"><b>Welcome</b></a> | <a
+						href="<%=ORSView.LOGIN_CTL%>"><b>Login</b></a> | <a
+						href="<%=ORSView.USER_REGISTRATION_CTL%>"> <b>SignUp</b>
+					</a>
+				</div> 
+                <%
+                 }
+                %>
+
+			</td>
+
+			<!-- Language Dropdown -->
+			<td style="width: 120px; text-align: center;">
+
+				<form style="margin: 0;">
+					<select name="lang" onchange="this.form.submit()">
+					
+						<option value="en" <%=("en".equals(locale)) ? "selected" : ""%>>English</option>
+						<option value="hi" <%=("hi".equals(locale)) ? "selected" : ""%>>Hindi</option>
+
+					</select>
+				</form>
+			</td>
+		</tr>
+	</table>
 
 	<hr>
+
 </body>
 </html>
