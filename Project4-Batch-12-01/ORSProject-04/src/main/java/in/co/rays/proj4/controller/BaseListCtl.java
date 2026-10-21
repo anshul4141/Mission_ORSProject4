@@ -18,11 +18,13 @@ public abstract class BaseListCtl<B extends BaseBean, M extends BaseModel> exten
 			throws ServletException, IOException {
 
 		int pageNo = 1;
-		int pageSize = 10;
+		int pageSize = 5;
 		BaseBean bean = populateBean(request);
 		M model = getModel();
 		List<B> list = model.search(bean, pageNo, pageSize);
+		List<B> nextList = model.search(bean, pageNo + 1, pageSize);
 
+		request.setAttribute("nextList", nextList);
 		ServletUtility.setList(list, request);
 		ServletUtility.setPageNo(pageNo, request);
 		ServletUtility.setPageSize(pageSize, request);
@@ -58,7 +60,7 @@ public abstract class BaseListCtl<B extends BaseBean, M extends BaseModel> exten
 		}
 
 		pageNo = (pageNo == 0) ? 1 : pageNo;
-		pageSize = 10;
+		pageSize = 5;
 
 		if (OP_SEARCH.equalsIgnoreCase(op)) {
 			pageNo = 1;
@@ -73,7 +75,9 @@ public abstract class BaseListCtl<B extends BaseBean, M extends BaseModel> exten
 		}
 
 		List<B> list = model.search(bean, pageNo, pageSize);
+		List<B> nextList = model.search(bean, pageNo + 1, pageSize);
 
+		request.setAttribute("nextList", nextList);
 		ServletUtility.setList(list, request);
 		ServletUtility.setPageNo(pageNo, request);
 		ServletUtility.setPageSize(pageSize, request);

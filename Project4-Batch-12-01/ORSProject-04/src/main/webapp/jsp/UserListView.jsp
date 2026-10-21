@@ -18,6 +18,7 @@
 	int pageSize = ServletUtility.getPageSize(request);
 	int index = ((pageNo - 1) * pageSize) + 1;
 	List<UserBean> list = ServletUtility.getList(request);
+	List<UserBean> nextList = (List) request.getAttribute("nextList");
 	Iterator<UserBean> it = list.iterator();
 	String _suc = ServletUtility.getSuccessMessage(request);
 	String _err = ServletUtility.getErrorMessage(request);
@@ -96,7 +97,7 @@
 				<td align="center"><input type="submit" name="operation"
 					value="<%=BaseCtl.OP_DELETE%>"></td>
 				<td align="right"><input type="submit" name="operation"
-					<%=list.size() < 10 ? "disabled" : ""%>
+					<%=nextList.size() == 0 ? "disabled" : ""%>
 					value="<%=BaseCtl.OP_NEXT%>"></td>
 			</tr>
 		</table>

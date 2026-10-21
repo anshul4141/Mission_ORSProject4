@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="in.co.rays.proj4.util.MessageSource"%>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -20,8 +21,7 @@
 <body>
 	<div id="footer">
 		<hr>
-		<h3>All rights reserved by Rays EdTech, SunilOS Infotech Pvt Ltd
-			Copyright © 2026</h3>
+		<h3><%=MessageSource.getInstance().get("footer.title")%></h3>
 	</div>
 </body>
 </html>

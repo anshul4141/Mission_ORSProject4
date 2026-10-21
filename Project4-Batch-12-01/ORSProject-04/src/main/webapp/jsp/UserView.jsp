@@ -44,10 +44,11 @@
 		if (bean.getId() > 0) {
 		%>
 
-		<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST" 
+		<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST"
 			enctype="multipart/form-data">
 
-			<input type="hidden" name="id" value="<%=bean.getId()%>">
+			<input type="hidden" name="id" value="<%=bean.getId()%>"> 
+			<input type="hidden" name="view" value="<%=ORSView.USER_VIEW%>">
 
 			<table>
 
@@ -158,17 +159,14 @@
 				<tr>
 					<th></th>
 					<td><input type="submit" name="operation"
-						value="<%=UserCtl.OP_SAVE%>"> 
-					<%
-                    if (bean.getId() > 0) {
-                    %>
+						value="<%=UserCtl.OP_SAVE%>"> <%
+ if (bean.getId() > 0) {
+ %>
 						<button>
 							<a href="<%=ORSView.USER_LIST_CTL%>">Cancel</a>
-						</button> 
-					<%
-                     }
-                     %>
-                   </td>
+						</button> <%
+ }
+ %></td>
 				</tr>
 			</table>
 		</div>

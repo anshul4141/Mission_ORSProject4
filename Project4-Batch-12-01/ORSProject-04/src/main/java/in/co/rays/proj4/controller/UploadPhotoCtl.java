@@ -110,14 +110,14 @@ public class UploadPhotoCtl extends HttpServlet {
 		String view = request.getParameter("view");
 		UserModel model = new UserModel();
 		UserBean bean = model.findByPK(id);
+		ServletUtility.setBean(bean, request);
 
 		// Get uploaded photo
 		Part part = request.getPart("photo");
 
 		if (part == null || part.getSize() == 0) {
-			ServletUtility.setBean(bean, request);
 			ServletUtility.setErrorMessage("Photo is required", request);
-			ServletUtility.forward(getView(), request, response);
+			ServletUtility.forward(view, request, response);
 			return;
 		}
 
@@ -141,10 +141,12 @@ public class UploadPhotoCtl extends HttpServlet {
 		FileOutputStream output = new FileOutputStream(destFile);
 
 		byte[] buffer = new byte[4096];
-		int bytesRead;
 
-		while ((bytesRead = input.read(buffer)) != -1) {
+		int bytesRead = input.read(buffer);
+
+		while (bytesRead != -1) {
 			output.write(buffer, 0, bytesRead);
+			bytesRead = input.read(buffer);
 		}
 
 		input.close();
@@ -153,24 +155,18 @@ public class UploadPhotoCtl extends HttpServlet {
 		try {
 
 			model.updatePhoto(id, fileName);
+			ServletUtility.setSuccessMessage("photo upload successfully", request);
 
 			System.out.println("Photo uploaded successfully: " + fileName);
 
 		} catch (ApplicationException e) {
 			e.printStackTrace();
 			ServletUtility.setErrorMessage("Photo upload failed", request);
-			ServletUtility.forward(getView(), request, response);
+			ServletUtility.forward(view, request, response);
 			return;
 		}
 
-		if ("profile".equals(view)) {
-			response.sendRedirect("MyProfileCtl");
-		} else {
-			response.sendRedirect("UserCtl?id=" + id);
-		}
+		ServletUtility.forward(view, request, response);
 	}
 
-	public String getView() {
-		return ORSView.USER_VIEW;
-	}
 }

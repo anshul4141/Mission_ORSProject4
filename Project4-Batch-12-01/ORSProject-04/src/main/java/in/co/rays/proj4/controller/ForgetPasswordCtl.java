@@ -50,7 +50,7 @@ public class ForgetPasswordCtl extends BaseCtl<UserBean, UserModel> {
 		if (bean != null) {
 			ServletUtility.setSuccessMessage("forgot password successfully check your mail", request);
 		} else {
-			ServletUtility.setErrorMessage("something went wrong please verify you emial again", request);
+			ServletUtility.setErrorMessage("something went wrong please verify your email again", request);
 		}
 
 		ServletUtility.forward(getView(), request, response);
