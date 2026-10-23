@@ -107,7 +107,6 @@ public class UploadPhotoCtl extends HttpServlet {
 			throws ServletException, IOException {
 
 		long id = DataUtility.getLong(request.getParameter("id"));
-		String view = request.getParameter("view");
 		UserModel model = new UserModel();
 		UserBean bean = model.findByPK(id);
 		ServletUtility.setBean(bean, request);
@@ -117,7 +116,7 @@ public class UploadPhotoCtl extends HttpServlet {
 
 		if (part == null || part.getSize() == 0) {
 			ServletUtility.setErrorMessage("Photo is required", request);
-			ServletUtility.forward(view, request, response);
+			ServletUtility.forward(getView(), request, response);
 			return;
 		}
 
@@ -162,11 +161,15 @@ public class UploadPhotoCtl extends HttpServlet {
 		} catch (ApplicationException e) {
 			e.printStackTrace();
 			ServletUtility.setErrorMessage("Photo upload failed", request);
-			ServletUtility.forward(view, request, response);
+			ServletUtility.forward(getView(), request, response);
 			return;
 		}
 
-		ServletUtility.forward(view, request, response);
+		ServletUtility.forward(getView(), request, response);
+	}
+
+	public String getView() {
+		return ORSView.USER_VIEW;
 	}
 
 }

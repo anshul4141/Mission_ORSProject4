@@ -39,7 +39,6 @@
 	</div>
 
 	<div align="center">
-
 		<%
 		if (bean.getId() > 0) {
 		%>
@@ -47,8 +46,7 @@
 		<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST"
 			enctype="multipart/form-data">
 
-			<input type="hidden" name="id" value="<%=bean.getId()%>"> 
-			<input type="hidden" name="view" value="<%=ORSView.USER_VIEW%>">
+			<input type="hidden" name="id" value="<%=bean.getId()%>">
 
 			<table>
 
@@ -82,7 +80,6 @@
 		<%
 		}
 		%>
-
 	</div>
 
 
